@@ -11,3 +11,12 @@ upload/
 
 # Environment scratch (persisted tool output) — never committed
 tool-results/
+
+# Next.js build output and generated types
+/.next/
+/out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Papermorph generated book artifacts — never committed (covers books/src/ per roadmap P2.1)
+books/
