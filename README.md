@@ -31,8 +31,9 @@ dependencies or regenerate the lockfile as part of feature tasks.
 | `npm run start` | Serve the production build |
 | `npm run lint` | ESLint flat config (`eslint-config-next/core-web-vitals` + `/typescript`) |
 | `npm run typecheck` | `tsc --noEmit` with strict mode enabled |
-| `npm run test` | Vitest test runner (no test files exist yet — tests arrive with the first logic task) |
+| `npm run test` | Vitest test runner (unit tests for the P2.4 scanners live in `scripts/*.test.mjs`) |
 | `npm run e2e` | Playwright test runner (browser binaries are not downloaded yet — deferred per roadmap) |
+| `npm run verify` | Canonical verification workflow (`scripts/verify.mjs`): typecheck → lint → tests → build → secret scan → forbidden-file scan; nonzero exit if any required check fails |
 | `scripts/sync-papermorph.sh` | Sync the vendored Papermorph engine to the pinned upstream commit (`--dry-run` / `--check` modes; see `docs/architecture/PAPERMORPH_VENDORING.md`) |
 
 ## Project layout
@@ -44,6 +45,7 @@ dependencies or regenerate the lockfile as part of feature tasks.
 - `src/app/globals.css` — Tailwind CSS 4 entry + base layer (lang-driven font selection, heading defaults, focus ring, reduced motion)
 - `src/app/tokens/page.tsx` — storybook-style demo of the token system (development artifact, not a product page)
 - `public/fonts/` — self-hosted font files with their verbatim license texts
+- `scripts/` — project-owned tooling: `verify.mjs` (the `npm run verify` orchestrator), `scan-secrets.mjs` + `scan-forbidden-files.mjs` (repository safety scanners, unit-tested in `scripts/*.test.mjs`), `sync-papermorph.sh` (vendored-engine sync), `lib/verify-common.mjs` (shared scanner helpers)
 - `vendor/` — vendored Papermorph engine (`vendor/engine/` + `vendor/engine.py`, byte-identical to the pinned upstream commit; do not hand-edit — sync via the script above)
 - `THIRD_PARTY_NOTICES.md` — license/attribution record for vendored third-party software
 - `next.config.ts` — wires `@tailwindcss/turbopack` via `turbopack.rules` (no PostCSS config on this path)
@@ -85,6 +87,15 @@ third-party requests; the Persian font is preloaded, Inter loads on demand.
 
 ## Repository hygiene
 
+- `npm run verify` enforces repository safety on every run: a secret scan and a
+  forbidden-file/hygiene scan check the git index (tracked + staged files) and
+  non-ignored untracked files; git-ignored paths and git history are not scanned.
+- Findings are reported as path + rule id + remediation only — matched secret
+  values are never printed.
+- Prohibited: `*.pdf`, anything under `books/`, `.env`/`.env.*` (except the
+  `*.example` template), generated/build directories, temp/backup files, and
+  files over 5 MiB (largest legitimate file today: the ~2.3 MiB vendored
+  MathJax bundle).
 - `.env` is ignored (`.env.example` is the placeholder template) — never commit real values.
 - `upload/` and `books/` are ignored — copyrighted source PDFs and generated book artifacts must never be committed.
 - `node_modules/`, `.next/`, `next-env.d.ts`, `*.tsbuildinfo` are generated locally and ignored.
