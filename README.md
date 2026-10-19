@@ -44,6 +44,7 @@ dependencies or regenerate the lockfile as part of feature tasks.
 - `src/app/fonts.css` — `@font-face` declarations for the two self-hosted variable fonts
 - `src/app/globals.css` — Tailwind CSS 4 entry + base layer (lang-driven font selection, heading defaults, focus ring, reduced motion)
 - `src/app/tokens/page.tsx` — storybook-style demo of the token system (development artifact, not a product page)
+- `src/content/schema/` — Zod content schema v1 (roadmap P3.1): runtime validators + inferred types for `Grade`, `Course`, `Lesson`, `VocabItem`, `GrammarPoint`, `Dialogue`, `Reading`, `QuizItem`; every entity carries a mandatory `provenance` block (`source` / `status` / `reviewer` / `edition`); rights decisions are never stored in content — third-party material references the rights register by record id
 - `public/fonts/` — self-hosted font files with their verbatim license texts
 - `scripts/` — project-owned tooling: `verify.mjs` (the `npm run verify` orchestrator), `scan-secrets.mjs` + `scan-forbidden-files.mjs` (repository safety scanners, unit-tested in `scripts/*.test.mjs`), `sync-papermorph.sh` (vendored-engine sync), `lib/verify-common.mjs` (shared scanner helpers)
 - `vendor/` — vendored Papermorph engine (`vendor/engine/` + `vendor/engine.py`, byte-identical to the pinned upstream commit; do not hand-edit — sync via the script above)
