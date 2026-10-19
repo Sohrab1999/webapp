@@ -1,2 +1,7 @@
 skills/
 node_modules/
+
+# Environment files — never commit real values; keep only .env.example
+.env
+.env.*
+!.env.example
