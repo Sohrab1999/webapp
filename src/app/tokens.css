@@ -1,0 +1,194 @@
+/*
+ * ============================================================================
+ * Design tokens — single source of truth for the visual foundation (P2.2).
+ * ============================================================================
+ *
+ * Architecture (Tailwind CSS 4 CSS-first, no tailwind.config.*):
+ *
+ *   1. Runtime-flippable colors live as raw custom properties in `:root` and
+ *      are re-declared under `prefers-color-scheme: dark`. They are mapped
+ *      into Tailwind with `@theme inline` so utilities like `bg-surface`
+ *      compile to `var(--surface)` and follow the scheme flip at runtime.
+ *
+ *   2. Static tokens (typography, sizing, layout, motion) are declared in a
+ *      plain `@theme` block: Tailwind emits each key as a real CSS custom
+ *      property on `:root` AND generates the matching utility
+ *      (`--font-fa` → `font-fa`, `--container-reading` → `max-w-reading`,
+ *      `--spacing-gutter` → `px-gutter`, `--radius-md` → `rounded-md`, …).
+ *
+ *   3. Tokens that are not a Tailwind utility namespace (durations, focus-ring
+ *      geometry) live as plain custom properties in `:root` and are consumed
+ *      by the base rules in globals.css / component CSS directly.
+ *
+ * Naming: tokens describe purpose, never a component or a specific hex value.
+ * Scale values intentionally adopt Tailwind 4.3.3 defaults (verified against
+ * node_modules/tailwindcss/theme.css) so migration from utility classes is
+ * visually lossless.
+ */
+
+/* ---------------------------------------------------------------------------
+ * 1. Runtime scheme-flippable color roles (raw properties)
+ * ------------------------------------------------------------------------- */
+:root {
+  /* Surfaces */
+  --background: #ffffff; /* page background */
+  --surface: #fafafa; /* resting panels (cards, wells) */
+  --surface-elevated: #ffffff; /* elevated layers (menus, dialogs) */
+
+  /* Text roles */
+  --foreground: #171717; /* primary text */
+  --foreground-secondary: #525252; /* supporting body text */
+  --foreground-muted: #737373; /* captions, metadata, de-emphasized text */
+
+  /* Primary action */
+  --primary: #2563eb; /* primary action color (AA on --background) */
+  --primary-foreground: #ffffff; /* text on primary action */
+
+  /* Structure */
+  --border: #e5e5e5; /* hairlines and control outlines */
+  --focus-ring: #2563eb; /* keyboard focus indicator */
+
+  /* Status (calibrated for use as text on --background, AA 4.5:1) */
+  --success: #15803d;
+  --warning: #b45309;
+  --error: #b91c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --surface: #171717;
+    --surface-elevated: #232323;
+    --foreground: #ededed;
+    --foreground-secondary: #a3a3a3;
+    --foreground-muted: #8a8a8a;
+    --primary: #60a5fa;
+    --primary-foreground: #0a0a0a;
+    --border: #262626;
+    --focus-ring: #60a5fa;
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --error: #f87171;
+  }
+}
+
+/*
+ * Dark-mode elevation note: elevated surfaces differentiate by a lighter
+ * surface color (--surface-elevated), not by a heavier shadow — dark-mode
+ * shadows read poorly, so a single light-calibrated shadow token is reused
+ * in both schemes.
+ */
+
+/* ---------------------------------------------------------------------------
+ * 2. Color roles → Tailwind color utilities (runtime-flippable mapping)
+ * ------------------------------------------------------------------------- */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-focus-ring: var(--focus-ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+}
+
+/* ---------------------------------------------------------------------------
+ * 3. Typography (static — Tailwind emits these as custom properties and
+ *    generates the matching utilities)
+ * ------------------------------------------------------------------------- */
+@theme {
+  /* Font families — Persian and English stacks are INDEPENDENTLY configurable.
+     Vazirmatn also covers Latin, so inline English words inside Persian
+     sentences stay in the Persian family for harmonized bidi rendering;
+     English containers (lang="en") select the English stack and fall back to
+     Vazirmatn for any embedded Arabic-script glyphs. */
+  --font-fa: "Vazirmatn", "Noto Sans Arabic", Tahoma, system-ui, sans-serif;
+  --font-en: "Inter", "Vazirmatn", "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  /* Type scale (rem) — adopts Tailwind defaults; documented as the app scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  /* Line-height scale — unitless so it scales with any font size.
+     1.75 for body: Persian/Arabic script needs generous line height. */
+  --leading-body: 1.75;
+  --leading-heading: 1.25;
+  --leading-ui: 1.5;
+
+  /* Font-weight scale */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* ---------------------------------------------------------------------------
+ * 4. Layout, sizing, shape (static)
+ * ------------------------------------------------------------------------- */
+@theme {
+  /* Spacing scale base — Tailwind's 4px grid (p-4 = 1rem, …) */
+  --spacing: 0.25rem;
+
+  /* Responsive content gutters (horizontal page padding) */
+  --spacing-gutter: 1rem; /* narrow viewports */
+  --spacing-gutter-wide: 1.5rem; /* sm and up */
+
+  /* Common control heights */
+  --spacing-control-sm: 2rem;
+  --spacing-control-md: 2.5rem;
+  --spacing-control-lg: 3rem;
+
+  /* Content widths */
+  --container-content: 64rem; /* app shell width (was max-w-5xl) */
+  --container-reading: 42rem; /* measure for long-form text (was max-w-2xl) */
+
+  /* Border radius scale — adopts Tailwind defaults */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  /* Elevation (single token; see dark-mode note above) */
+  --shadow-elevated: 0 1px 2px rgb(0 0 0 / 0.06), 0 4px 12px rgb(0 0 0 / 0.08);
+}
+
+/* ---------------------------------------------------------------------------
+ * 5. Motion (static defaults + tokens for custom CSS)
+ * ------------------------------------------------------------------------- */
+@theme {
+  /* Defaults applied by Tailwind transition utilities */
+  --default-transition-duration: 150ms;
+  --default-transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Named easing */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Duration tokens — consumed by custom CSS as var(--duration-*).
+   In markup, use the matching Tailwind bare-value utilities
+   (duration-120 / duration-180 / duration-280) so values stay in sync. */
+:root {
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --duration-slow: 280ms;
+}
+
+/* Focus-ring geometry — consumed by the :focus-visible rule in globals.css */
+:root {
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+}

@@ -1,36 +1,91 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@import "./fonts.css";
+@import "./tokens.css";
 
 /*
- * System font stack chosen so Persian (RTL) and Latin (LTR) text both render
- * correctly without bundling web fonts. Typeface/token decisions belong to P2.2.
+ * Base element rules. Everything here lives in @layer base so Tailwind
+ * utilities (utilities layer) always win over these defaults.
  */
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family:
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Noto Sans Arabic",
-    "Noto Sans",
-    Tahoma,
-    sans-serif;
+
+@layer base {
+  /*
+   * Language-driven font selection: the effective `lang` of an element decides
+   * the family. The document root is `lang="fa"` (see layout.tsx), so Persian
+   * is the default everywhere; any subtree marked `lang="en"` (English content
+   * blocks must also set `dir="ltr"`) gets the English stack automatically.
+   * This is the app-wide convention for bilingual content — see README.md.
+   * Both stacks resolve through tokens.css and stay independently configurable.
+   */
+  :lang(fa) {
+    font-family: var(--font-fa);
+  }
+
+  :lang(en) {
+    font-family: var(--font-en);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: var(--leading-body);
+  }
+
+  /*
+   * Token-driven heading scale (h1 is fluid: 2xl → 3xl at the `sm` breakpoint).
+   * Individual pages may still override per-heading with utilities.
+   */
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-heading);
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-heading);
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-heading);
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-heading);
+  }
+
+  @media (min-width: 40rem) {
+    h1 {
+      font-size: var(--text-3xl);
+    }
+  }
+
+  /*
+   * Keyboard focus visibility baseline: one consistent, token-driven ring for
+   * every focusable element. Color/width/offset come from tokens.css.
+   */
+  :focus-visible {
+    outline: var(--focus-ring-width) solid var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  /*
+   * Reduced-motion strategy: motion that users cannot opt out of per-component
+   * is neutralized globally; transitions/animations collapse to effectively
+   * instant, and smooth scrolling never starts.
+   */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }

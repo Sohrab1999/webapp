@@ -13,6 +13,16 @@ export default function RootLayout({
 }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="fa" dir="rtl" className="h-full">
+      {/* Primary Persian font — preloaded to shrink the fallback→swap window.
+          Inter is not preloaded: it is needed only on pages with English
+          containers and loads on demand (see src/app/fonts.css). */}
+      <link
+        rel="preload"
+        href="/fonts/vazirmatn/Vazirmatn-Variable.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
       <body className="flex min-h-screen flex-col antialiased">
         <a
           href="#main-content"
@@ -20,29 +30,31 @@ export default function RootLayout({
         >
           پرش به محتوای اصلی
         </a>
-        <header className="border-b border-black/10 dark:border-white/15">
-          <div className="mx-auto flex w-full max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <header className="border-b border-border">
+          <div className="mx-auto flex w-full max-w-content items-center justify-between gap-4 px-gutter py-3 sm:px-gutter-wide">
             <p className="text-base font-semibold sm:text-lg">
               انگلیسی تعاملی{" "}
               <span
                 dir="ltr"
                 lang="en"
-                className="text-sm font-normal opacity-70"
+                className="text-sm font-normal text-foreground-muted"
               >
                 Interactive English
               </span>
             </p>
-            <p className="text-xs opacity-70 sm:text-sm">پایه‌های ۷ تا ۱۲</p>
+            <p className="text-xs text-foreground-muted sm:text-sm">
+              پایه‌های ۷ تا ۱۲
+            </p>
           </div>
         </header>
         <main
           id="main-content"
-          className="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6 sm:py-12"
+          className="mx-auto w-full max-w-content flex-1 px-gutter py-8 sm:px-gutter-wide sm:py-12"
         >
           {children}
         </main>
-        <footer className="border-t border-black/10 dark:border-white/15">
-          <div className="mx-auto w-full max-w-5xl px-4 py-4 text-xs leading-6 opacity-70 sm:px-6 sm:text-sm">
+        <footer className="border-t border-border">
+          <div className="mx-auto w-full max-w-content px-gutter py-4 text-xs leading-6 text-foreground-muted sm:px-gutter-wide sm:text-sm">
             <p>
               اپلیکیشن آموزش تعاملی زبان انگلیسی — این صفحه تنها پایهٔ فنی
               پروژه است؛ امکانات آموزشی در گام‌های بعدی نقشهٔ راه اضافه

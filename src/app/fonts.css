@@ -1,0 +1,49 @@
+/*
+ * Self-hosted web fonts — declared here, served from /public/fonts/.
+ * No third-party CDN, no runtime network dependency outside this origin.
+ *
+ * Vazirmatn (Persian/Arabic script, variable weight 100–900)
+ *   Source:   https://github.com/rastikerdar/vazirmatn — official release v33.003
+ *   File:     fonts/webfonts/Vazirmatn[wght].woff2 from vazirmatn-v33.003.zip,
+ *             shipped byte-identical and renamed to Vazirmatn-Variable.woff2
+ *             (file rename only — the font's internal name tables are untouched).
+ *   License:  SIL Open Font License 1.1 — verbatim copy at
+ *             public/fonts/vazirmatn/OFL.txt (shipped inside the official zip).
+ *   sha256:   4e3fa217d38fdafc1fea4414ceb58ca5e662cf0ab5fa735a8c8c20e8b42cad92
+ *
+ * Inter (Latin/English, variable weight 100–900 + optical size axis)
+ *   Source:   https://github.com/rsms/inter — official release v4.1
+ *   File:     web/InterVariable.woff2 from Inter-4.1.zip, shipped byte-identical.
+ *   License:  SIL Open Font License 1.1 — verbatim copy at
+ *             public/fonts/inter/LICENSE.txt (shipped inside the official zip).
+ *   sha256:   693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3
+ *
+ * Deliberate choices:
+ *   - Variable fonts only (2 files, ~453 KB total) instead of per-weight files.
+ *   - No italic files bundled; browsers synthesize oblique if ever requested.
+ *     Revisit only if teaching content needs true italics.
+ *   - font-display: swap — the webfont is the app's typographic identity, so
+ *     showing fallback-then-swap beats blocking text. The primary Persian font
+ *     is preloaded in src/app/layout.tsx to shrink the swap window.
+ *   - No unicode-range splitting: which family renders a run of text is decided
+ *     by the effective document language (:lang rules in globals.css), not by
+ *     per-codepoint font matching. Persian text keeps Vazirmatn's own Latin for
+ *     harmonized inline English words; English containers get Inter and fall
+ *     back to Vazirmatn for any embedded Arabic-script glyphs.
+ */
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/vazirmatn/Vazirmatn-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter/InterVariable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
