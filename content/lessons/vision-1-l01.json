@@ -1,0 +1,384 @@
+{
+  "id": "vision-1-l01",
+  "courseId": "vision-1",
+  "number": 1,
+  "title": "A New School Year",
+  "titleFa": "سال تحصیلی جدید",
+  "objectives": [
+    "Introduce yourself and greet a new classmate",
+    "Talk about daily school routines using the present simple",
+    "Use frequency adverbs such as always, usually, and never before the main verb"
+  ],
+  "vocab": [
+    {
+      "id": "vision-1-l01-vocab-01",
+      "term": "classmate",
+      "meaningFa": "هم‌کلاسی",
+      "pos": "noun",
+      "example": "My classmates are friendly and helpful.",
+      "exampleFa": "هم‌کلاسی‌های من مهربان و مفید هستند.",
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "id": "vision-1-l01-vocab-02",
+      "term": "semester",
+      "meaningFa": "نیم‌سال تحصیلی",
+      "pos": "noun",
+      "example": "The first semester starts in Mehr.",
+      "exampleFa": "نیم‌سال اول در مهر شروع می‌شود.",
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "id": "vision-1-l01-vocab-03",
+      "term": "subject",
+      "meaningFa": "مادهٔ درسی",
+      "pos": "noun",
+      "example": "Mathematics is my favourite subject.",
+      "exampleFa": "ریاضی مادهٔ درسی مورد علاقهٔ من است.",
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "id": "vision-1-l01-vocab-04",
+      "term": "timetable",
+      "meaningFa": "برنامهٔ هفتگی",
+      "pos": "noun",
+      "example": "Our timetable has English on Saturdays and Mondays.",
+      "exampleFa": "برنامهٔ هفتگی ما روزهای شنبه و دوشنبه زبان دارد.",
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "id": "vision-1-l01-vocab-05",
+      "term": "recess",
+      "meaningFa": "زنگ تفریح",
+      "pos": "noun",
+      "example": "We play football at recess.",
+      "exampleFa": "در زنگ تفریح فوتبال بازی می‌کنیم.",
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "id": "vision-1-l01-vocab-06",
+      "term": "review",
+      "meaningFa": "مرور کردن",
+      "pos": "verb",
+      "example": "I review my notes before the quiz.",
+      "exampleFa": "قبل از آزمون یادداشت‌هایم را مرور می‌کنم.",
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "id": "vision-1-l01-vocab-07",
+      "term": "practice",
+      "meaningFa": "تمرین کردن",
+      "pos": "verb",
+      "example": "I practice English for twenty minutes every day.",
+      "exampleFa": "هر روز بیست دقیقه انگلیسی تمرین می‌کنم.",
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "id": "vision-1-l01-vocab-08",
+      "term": "excellent",
+      "meaningFa": "عالی",
+      "pos": "adjective",
+      "example": "Her pronunciation is excellent.",
+      "exampleFa": "تلفظ او عالی است.",
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "id": "vision-1-l01-vocab-09",
+      "term": "difficult",
+      "meaningFa": "دشوار",
+      "pos": "adjective",
+      "example": "This word is difficult, but useful.",
+      "exampleFa": "این واژه دشوار است، اما کاربردی.",
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "id": "vision-1-l01-vocab-10",
+      "term": "get to know",
+      "meaningFa": "آشنا شدن (با کسی یا چیزی)",
+      "pos": "phrase",
+      "example": "I want to get to know my new classmates.",
+      "exampleFa": "می‌خواهم با هم‌کلاسی‌های جدیدم آشنا شوم.",
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    }
+  ],
+  "grammar": [
+    {
+      "id": "vision-1-l01-grammar-01",
+      "title": "Present simple for routines",
+      "titleFa": "زمان حال ساده برای کارهای روزمره",
+      "explanation": "Use the present simple to talk about habits and routines. With he, she, or it, add -s (or -es) to the verb.",
+      "explanationFa": "زمان حال ساده را برای عادت‌ها و کارهای روزمره به کار می‌بریم. با فاعل سوم‌شخص مفرد (he، she، it) به آخر فعل، s (یا es) اضافه می‌کنیم.",
+      "examples": [
+        { "en": "We study English on Saturdays.", "fa": "ما روزهای شنبه زبان می‌خوانیم." },
+        { "en": "My sister walks to school.", "fa": "خواهرم پیاده به مدرسه می‌رود." }
+      ],
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "id": "vision-1-l01-grammar-02",
+      "title": "Adverbs of frequency",
+      "titleFa": "قیدهای تکرار",
+      "explanation": "Words like always, usually, sometimes, and never say how often something happens. Put them before the main verb.",
+      "explanationFa": "واژه‌هایی مانند always، usually، sometimes و never نشان می‌دهند کاری چقدر تکرار می‌شود. این قیدها را قبل از فعل اصلی می‌گذاریم.",
+      "examples": [
+        { "en": "I always review my notes after class.", "fa": "من همیشه بعد از کلاس یادداشت‌هایم را مرور می‌کنم." },
+        { "en": "She is never late for school.", "fa": "او هرگز برای مدرسه دیر نمی‌کند." }
+      ],
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    }
+  ],
+  "dialogue": {
+    "id": "vision-1-l01-dialogue-01",
+    "title": "In the schoolyard",
+    "titleFa": "در حیاط مدرسه",
+    "lines": [
+      {
+        "speaker": "Sara",
+        "en": "Hi! I'm Sara. Are you in the English class too?",
+        "fa": "سلام! من سارا هستم. تو هم در کلاس زبان هستی؟"
+      },
+      {
+        "speaker": "Reza",
+        "en": "Yes, I am. I'm Reza. Nice to meet you.",
+        "fa": "بله، هستم. من رضا هستم. از آشنایی با تو خوشبختم."
+      },
+      {
+        "speaker": "Sara",
+        "en": "Nice to meet you too. Do you like our new timetable?",
+        "fa": "من هم از آشنایی با تو خوشبختم. برنامهٔ هفتگی جدیدمان را دوست داری؟"
+      },
+      {
+        "speaker": "Reza",
+        "en": "I like it, but English is always the last class on Saturdays.",
+        "fa": "دوستش دارم، اما روزهای شنبه کلاس زبان همیشه آخر است."
+      },
+      {
+        "speaker": "Sara",
+        "en": "That's okay. I usually review new words after class. It helps a lot.",
+        "fa": "اشکالی ندارد. من معمولاً بعد از کلاس لغت‌های جدید را مرور می‌کنم. خیلی کمک می‌کند."
+      },
+      {
+        "speaker": "Reza",
+        "en": "Good idea! Let's practice together at recess.",
+        "fa": "فکر خوبی است! بیا در زنگ تفریح با هم تمرین کنیم."
+      }
+    ],
+    "provenance": {
+      "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+      "status": "ai-draft"
+    }
+  },
+  "reading": {
+    "id": "vision-1-l01-reading-01",
+    "title": "Sara's School Week",
+    "titleFa": "هفتهٔ مدرسهٔ سارا",
+    "paragraphs": [
+      "Sara is a tenth-grade student. Her school week starts on Saturday and ends on Wednesday. English is her favourite subject, and it appears on her timetable three times a week.",
+      "Every day after class, Sara reviews her new English words for fifteen minutes. She usually studies with her classmate Mina at recess. On Thursdays there is no school, so she practices at home with a simple rule: read one page and learn two new words."
+    ],
+    "questions": [
+      {
+        "kind": "truefalse",
+        "id": "vision-1-l01-reading-01-q1",
+        "prompt": "True or false: Sara reviews her new English words every day.",
+        "statement": "Sara reviews her new English words every day.",
+        "answer": true,
+        "provenance": {
+          "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+          "status": "ai-draft"
+        }
+      },
+      {
+        "kind": "choice",
+        "id": "vision-1-l01-reading-01-q2",
+        "prompt": "Who studies with Sara at recess?",
+        "options": ["Her classmate Mina", "Her teacher"],
+        "answerIndex": 0,
+        "provenance": {
+          "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+          "status": "ai-draft"
+        }
+      }
+    ],
+    "provenance": {
+      "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+      "status": "ai-draft"
+    }
+  },
+  "assessment": [
+    {
+      "kind": "choice",
+      "id": "vision-1-l01-q01",
+      "prompt": "My brother ___ to school by bus every morning.",
+      "options": ["go", "goes"],
+      "answerIndex": 1,
+      "feedback": {
+        "correct": "Correct — with he, she, or it, the present simple verb takes -s.",
+        "correctFa": "درست است — با سوم‌شخص مفرد، فعل حال ساده s می‌گیرد.",
+        "wrong": "With he, she, or it, the present simple verb takes -s.",
+        "wrongFa": "با he، she یا it، فعل حال ساده s می‌گیرد."
+      },
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "kind": "choice",
+      "id": "vision-1-l01-q02",
+      "prompt": "Where can you see which classes you have on Monday?",
+      "promptFa": "کجا می‌توانی ببینی دوشنبه چه کلاس‌هایی داری؟",
+      "options": ["In the timetable", "At recess"],
+      "answerIndex": 0,
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "kind": "choice",
+      "id": "vision-1-l01-q03",
+      "prompt": "Your classmate says: \"Nice to meet you.\" What do you answer?",
+      "promptFa": "هم‌کلاسی‌ات می‌گوید «از آشنایی با تو خوشبختم». چه پاسخی می‌دهی؟",
+      "options": ["\"Nice to meet you, too.\"", "\"I am fine, thanks.\""],
+      "answerIndex": 0,
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "kind": "blanks",
+      "id": "vision-1-l01-q04",
+      "prompt": "Complete the sentence with the correct words.",
+      "promptFa": "جمله را با واژه‌های درست کامل کن.",
+      "text": "Every morning I ___ at six, and in the evening I ___ my homework.",
+      "answers": ["get up", "do"],
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "kind": "grid",
+      "id": "vision-1-l01-q05",
+      "prompt": "Which sentences use the present simple correctly?",
+      "promptFa": "کدام جمله‌ها زمان حال ساده را درست به کار برده‌اند؟",
+      "columns": [
+        { "key": "correct", "label": "Correct" },
+        { "key": "incorrect", "label": "Incorrect" }
+      ],
+      "rows": [
+        {
+          "statement": "She always do her homework.",
+          "answerKeys": ["incorrect"],
+          "why": "With she, the verb must be does, not do."
+        },
+        {
+          "statement": "We study English on Saturdays.",
+          "answerKeys": ["correct"]
+        },
+        {
+          "statement": "My father never watch TV in the morning.",
+          "answerKeys": ["incorrect"],
+          "why": "With my father (he), watch becomes watches."
+        }
+      ],
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "kind": "text",
+      "id": "vision-1-l01-q06",
+      "prompt": "Type the English word for the Persian meaning shown below.",
+      "promptFa": "برنامهٔ هفتگی — واژهٔ انگلیسیِ این معنی را بنویسید.",
+      "accepted": ["timetable"],
+      "caseSensitive": false,
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "kind": "match",
+      "id": "vision-1-l01-q07",
+      "prompt": "Match each English word with its Persian meaning.",
+      "promptFa": "هر واژهٔ انگلیسی را به معنی فارسی‌اش وصل کن.",
+      "pairs": [
+        { "left": "classmate", "right": "هم‌کلاسی" },
+        { "left": "recess", "right": "زنگ تفریح" },
+        { "left": "review", "right": "مرور کردن" },
+        { "left": "excellent", "right": "عالی" }
+      ],
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    },
+    {
+      "kind": "sorter",
+      "id": "vision-1-l01-q08",
+      "prompt": "Sort the words into the two groups.",
+      "promptFa": "واژه‌ها را در دو گروه دسته‌بندی کن.",
+      "regions": [
+        { "id": "school-subjects", "label": "School subjects" },
+        { "id": "daily-actions", "label": "Daily actions" }
+      ],
+      "chips": [
+        { "text": "mathematics", "answerRegionId": "school-subjects" },
+        { "text": "geography", "answerRegionId": "school-subjects" },
+        { "text": "review new words", "answerRegionId": "daily-actions", "why": "A thing you do, not a school subject." },
+        { "text": "get up early", "answerRegionId": "daily-actions" }
+      ],
+      "provenance": {
+        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "status": "ai-draft"
+      }
+    }
+  ],
+  "provenance": {
+    "source": {
+      "kind": "author-created",
+      "note": "Original demo lesson authored for this app as an AI-assisted first draft (roadmap task P3.2). It uses the official Vision 1 curriculum context (grade 10, lesson 1) but no text, dialogue, exercise, or answer key is copied from the official Vision 1 Student Book or from any source in docs/content/RIGHTS_REGISTER.md."
+    },
+    "status": "ai-draft"
+  }
+}
