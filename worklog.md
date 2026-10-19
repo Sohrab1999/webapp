@@ -25,3 +25,29 @@ Stage Summary:
 - Open gates: C1 fa-IR TTS spike, C2 rights register, C3 engine sync hygiene, C4 mobile spike, C5 demo-review scope gate.
 - Unresolved: outbound Edge-TTS network access in sandbox; fa-IR word timings; upstream fa/RTL contribution; Persian font pairing; deployment target.
 - Status: STOPPED — awaiting explicit user approval before any implementation task.
+
+---
+Task ID: 2 (user-directed: GitHub setup, .env security remediation, verified push)
+Agent: main agent (Z.ai / GLM)
+Task: Connect the repo to GitHub (Sohrab1999/webapp) with a securely handled PAT; audit and remediate `.env` tracking; establish the mandatory commit-and-push policy; push verified commits; stop before any feature work (no P3.1, no scaffolding).
+
+Work Log:
+- Inspected git state: branch `main`, 3 commits (b913648 "Initial commit", 00fc28f "docs: Phase 0/1", 252fe4d = environment auto-checkpoint with UUID subject, 2026-10-19 15:53 UTC), NO remote, identity `Z User <z@container>`, working tree clean, no stash, no signing config.
+- DISCREPANCY FOUND & INVESTIGATED: commit 252fe4d silently ADDED 9 copyrighted source PDFs (~64 MB total) to Git tracking, contradicting Task 1's record that upload/ was kept untracked. Confirmed via `git show --stat 252fe4d` (9 files, Bin 0 -> ...).
+- SECURITY AUDIT of `.env` (key names/heuristics only — values never printed): single key `DATABASE_URL`, blob 769ebf2 unchanged since b913648; value is `file:` local SQLite path with NO user/password/host segment. VERDICT: no live credential ever committed → NO rotation required. Pattern scan: `github_pat_` occurrences across ALL history = 0; only env-like file ever committed = `.env`.
+- Token handling: user-provided fine-grained PAT stored at `/home/z/.secrets/gh.pat` (0600, OUTSIDE any repo); git credential helper `/home/z/.secrets/git-credential-ghpat.sh` (0700) configured via `git config --global credential.helper <path>` (path only, no secret in config); curl bearer header at `/home/z/.secrets/gh.header` (0600). Token never appears in remote URL, git config, command output, diffs, commits, or reports.
+- GitHub API verification (`scripts/gh_check.sh`): GET /user → login `Sohrab1999`; GET /repos/Sohrab1999/webapp → **private**, default_branch `main`, token perms {admin, maintain, push, triage, pull} (push OK); unauthenticated GET → 403 (confirms private). `git ls-remote` (pre-remote) exited 0 with zero refs → remote repo EMPTY → plain push safe, no force needed.
+- Remediation commit `91c9e9f` (security): `git rm --cached .env` (local file preserved on disk), `.gitignore` += `.env`/`.env.*` with `!.env.example`, added placeholder-only `.env.example`. Verified: only `.env.example` tracked afterwards; `.env` still present locally.
+- Remediation commit `b9a1fe3` (licensing): `git rm -r --cached upload/` (9 PDFs untracked, local copies preserved), `.gitignore` += `upload/`. Commit message documents affected works (Ahmadi Vision 1–3, Lotfi grades 7–9, OUP L.A. Hill — all rights reserved) and that historical blobs remain in 252fe4d; history rewrite NOT performed (requires explicit owner approval).
+- Pre-push scan: `github_pat_` across all trees = 0; pushed tip tree = `.env.example`, `.gitignore`, docs/architecture/PAPERMORPH_ASSESSMENT.md, download/README.md, roadmaps/interactive-english-learning-webapp.md, worklog.md only.
+- Remote configured: `origin = https://github.com/Sohrab1999/webapp.git` (clean URL, no credentials). Pushed `main` (new branch, no force, `-u` upstream set).
+- PUSH VERIFIED INDEPENDENTLY: `git ls-remote origin refs/heads/main` → `b9a1fe3f6366ed800b77163ab8f626c0c4c85ef0` == local HEAD. Upstream tracking `main...origin/main` in sync.
+- Updated roadmap: header date, §5.6 mandatory commit-and-push policy, P1.2 AC note (early tip-level untracking), §7 change log row, footer (next proposed task + standing notes). Appended this worklog section.
+- Committed docs+tooling update (includes `scripts/gh_check.sh`, no secrets) and re-pushed; re-verified hash equality via ls-remote (final hash recorded in Stage Summary).
+
+Stage Summary:
+- Remote: https://github.com/Sohrab1999/webapp.git (PRIVATE) — branch `main`; the docs/tooling commit containing this log entry is the tip at report time; its hash is independently verified equal to remote `refs/heads/main` before reporting (see final report to owner).
+- `.env` remediation: DONE — untracked, ignored, `.env.example` template committed. No credential rotation needed (no live credential existed; committed value is a non-secret local SQLite path).
+- Copyrighted PDFs: untracked at tip, local copies preserved (upload/). Historical blobs remain in 252fe4d — optional history cleanup available ONLY as an owner-approved separate task. Recommendation: keep repo private until/if that decision is made.
+- Workflow policy in force (roadmap §5.6): one task per approval cycle → verify → diff review → commit → push → ls-remote hash verification → report → STOP.
+- Status: STOPPED — awaiting approval; recommended next task: P1.1 (ratify Option C + gates C1–C5), then P3.1 as first implementation task per approver's stated intent.

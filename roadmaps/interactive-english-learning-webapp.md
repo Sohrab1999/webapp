@@ -6,7 +6,7 @@
 | **Status legend** | `[ ]` planned · `[~]` in progress · `[!]` blocked · `[x]` completed |
 | **Companion report** | [`docs/architecture/PAPERMORPH_ASSESSMENT.md`](../docs/architecture/PAPERMORPH_ASSESSMENT.md) — verified facts (V1–V30), risks (R1–R8), integration decision |
 | **Workflow** | Per the project mandate: tasks are implemented **one at a time**, only after explicit approval; the roadmap and change log are updated **only after verification** |
-| **Last updated** | 2026-10-19 (initial Phase 0/1 run) |
+| **Last updated** | 2026-10-19 (Git/GitHub setup + security remediation run) |
 
 ---
 
@@ -75,7 +75,7 @@ Dependency order follows the mandated P0→P11 sequence. Tasks are small and che
 - [ ] **P1.1 Ratify Option C (hybrid)** and the five gating conditions C1–C5 with the approver.
   - *AC:* approver confirms decision in chat; decision logged in §7 change log.
 - [ ] **P1.2 Draft permission requests** for the two جزوه author groups (contacts `@JamalAhmadi1984`, Dr. Hassan Lotfi) stating intended interactive reuse; record status per source in `docs/content/RIGHTS_REGISTER.md`.
-  - *AC:* register lists every uploaded source → decision (reference-only / pending-permission / permitted); zero copyrighted files tracked by git.
+  - *AC:* register lists every uploaded source → decision (reference-only / pending-permission / permitted); zero copyrighted files tracked by git. *(Tip-level untracking already achieved early on 2026-10-19 via commit b9a1fe3 — historical blobs remain in local/auto-checkpoint history 252fe4d; history cleanup would be a separate owner-approved task.)*
 - [ ] **P1.3 Choose exact dependency versions** (Next.js, React, Tailwind, Zod, Vitest, Playwright) against this environment's Node 24/npm 11; pin in `package.json`.
   - *AC:* versions documented with install evidence; no undocumented constraint violated.
 
@@ -204,7 +204,7 @@ Every task, before being marked `[x]`, must satisfy:
 3. **Browser check** for any UI change — Playwright minimum Chromium + Firefox.
 4. **`npm run verify` green** — typecheck, lint, tests, build, secret scan, forbidden-file scan (P2.4).
 5. **Roadmap + change log updated only after verification** (mandate #8), including files changed, commands executed, actual results, limitations, next proposed task (mandate #9).
-6. **Git**: meaningful commit per approved task; verify hash + branch; push only if a remote exists — currently **no remote is configured**, so commits stay local and this fact is stated explicitly every time (never claim a push).
+6. **Git**: meaningful commit per approved task; verify hash + branch. **Mandatory commit-and-push policy (set 2026-10-19):** inspect working tree → implement only the approved task → run checks → review full diff (secrets/unintended changes) → update roadmap/log with verified results only → commit → push to `origin` (`https://github.com/Sohrab1999/webapp.git`, private) → **independently verify via `git ls-remote origin` that the remote ref equals the local HEAD** → report files, real check results, commit hash, push status → STOP for approval. Never force-push, reset, rebase, or amend published commits; never commit secrets or copyrighted assets; never accumulate uncommitted task batches; never claim a push without hash verification.
 
 ### Security / accessibility / provenance / licensing checklist (per release)
 
@@ -237,7 +237,9 @@ Every task, before being marked `[x]`, must satisfy:
 |---|---|---|---|
 | 2026-10-19 | P0.1–P0.4 | Phase 0 executed: workspace + git inspected; actual Papermorph repo investigated (README, SKILL.md, references, scripts, engine, i18n, TTS); toolchain verified; uploaded sources rights-reviewed; assessment written with **GO — conditional**. | `[x]` completed & verified |
 | 2026-10-19 | P1 (plan) | Roadmap created; integration Option C recommended (hybrid: vendored engine + app-native activity layer + GLM authoring playbook); first implementation task proposed: **P3.1** (schema), with P2 scaffolding as the alternative first step if approver prefers. | planned (awaiting approval) |
+| 2026-10-19 | Git/GitHub setup + security remediation (user-directed, between P1 and P2/P3) | **Audit:** `.env` (blob 769ebf2, since b913648) contains only `DATABASE_URL=file:…/db/custom.db` — a local SQLite path, **no credential** → nothing to rotate; `github_pat_` pattern: 0 matches in all history. **Discrepancy found:** environment auto-checkpoint 252fe4d (UUID subject) had silently tracked 9 copyrighted PDFs (~64 MB) — investigated, documented. **Remediation:** `91c9e9f` untracks `.env` (local file kept), adds env-hygiene `.gitignore` rules + placeholder-only `.env.example`; `b9a1fe3` untracks `upload/` PDFs (local copies kept), ignores `upload/`. **Remote:** `origin = https://github.com/Sohrab1999/webapp.git` (verified via API: private, default branch `main`, token has push); PAT stored outside repo (`/home/z/.secrets/`, 0600) behind a git credential helper — absent from URLs/config/logs/commits. **Push verified:** `main` → `origin/main`, `git ls-remote` hash == local HEAD `b9a1fe3f6366ed800b77163ab8f626c0c4c85ef0`. Historical blobs (non-secret `.env` blob; PDF blobs) remain in earlier commits — history rewrite NOT performed (requires explicit owner approval). | `[x]` completed & verified |
 
 **Currently in progress:** none (workflow gate: awaiting approver's decision on P1.1).
 **Blocked:** none (P6.2 TTS spike becomes the first potentially blocked task if sandbox network restricts Edge TTS).
-**Next proposed task:** **P3.1 — Define the lesson content schema (Zod) and fixture examples** (assessment §9 recommendation), or **P2.1** if the approver prefers to scaffold first.
+**Next proposed task:** **P1.1 — Ratify Option C (hybrid) and gates C1–C5** (single approval decision that unlocks P1.2/P1.3 and then the first implementation task, **P3.1**, per the approver's stated intent).
+**Standing notes:** repo `Sohrab1999/webapp` is private — keep it private until any owner-approved history cleanup; PDF blobs and the non-secret `.env` blob remain in earlier history (252fe4d / b913648).
