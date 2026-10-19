@@ -51,3 +51,27 @@ Stage Summary:
 - Copyrighted PDFs: untracked at tip, local copies preserved (upload/). Historical blobs remain in 252fe4d — optional history cleanup available ONLY as an owner-approved separate task. Recommendation: keep repo private until/if that decision is made.
 - Workflow policy in force (roadmap §5.6): one task per approval cycle → verify → diff review → commit → push → ls-remote hash verification → report → STOP.
 - Status: STOPPED — awaiting approval; recommended next task: P1.1 (ratify Option C + gates C1–C5), then P3.1 as first implementation task per approver's stated intent.
+
+---
+Task ID: 3 (P1.1 ratification — record decision, operationalize gates C1–C5, verify & push docs)
+Agent: main agent (Z.ai / GLM)
+Task: Owner ratified Option C subject to gates C1–C5. Convert every gate into explicit, testable acceptance criteria with documented pass/fail status; keep verified facts / assumptions / unresolved decisions distinct; update the existing roadmap + worklog IN PLACE (no duplicate documents); NO P3.1, no scaffolding, no product features; commit, push, verify remote hash; report and stop.
+
+Work Log:
+- Pre-flight: working tree clean; local HEAD == origin/main == 5eebb97b84e360ecee55e67af6b37feae24a57cf (verified before edits).
+- Re-read assessment §9 (exact gate definitions), §7 (rights table), §10 (unresolved questions), and facts V9/V10/V13/V20/V21/V24/V25/V26/V27 to cite sources precisely.
+- Roadmap updated IN PLACE (no new documents created):
+  - §2: ratification banner — Option C adopted subject to C1–C5; gate failure triggers §6 fallback, not architecture redesign.
+  - P1.1 checkbox → [x] with ratification evidence and pointer to §5.1.
+  - NEW §5.1 (single source of truth for gate status): per-gate testable criteria — C1 0/6 UNTESTED; C2 1/5 PARTIAL (only criterion with executed evidence: tip-level zero-copyrighted-files, verified via 91c9e9f+b9a1fe3 pre-push `git ls-files` listing); C3 0/5 UNTESTED; C4 0/3 UNTESTED; C5 0/3 NOT REACHED. Rule encoded: no criterion PASS without recorded output/artifact; no gate passes with a PENDING criterion.
+  - Per gate: verified-fact evidence (V-refs), assumptions (explicitly labelled unverified), unresolved questions (assessment §10.x), and the on-FAIL fallback (R2/R3/R6) kept as separate labelled lines.
+  - §7 change log: P1.1 row added. Footer: next proposed task = P1.2; standing notes extended (gate statuses change only with recorded evidence).
+- Explicitly NOT claimed (owner constraint honored): Persian TTS viability (no Edge TTS probe was run in this task — C1 untouched), mobile compatibility (C4 untouched), Papermorph/GLM authoring compatibility (V26: GLM absent upstream; V27 flagged UNVERIFIED-in-practice until the P9.4 experiment).
+- No product code, no scaffolding, no P3.1, no new roadmap documents; only roadmaps/interactive-english-learning-webapp.md + worklog.md changed.
+- Diff review + secret scan (token prefix + fragment) on staged changes: clean (0 matches).
+- Commit `docs(P1.1): …` pushed to origin/main; VERIFIED via `git ls-remote origin refs/heads/main` == local HEAD (hash in final report to owner).
+
+Stage Summary:
+- P1.1 complete, verified, pushed. §5.1 is now the authoritative gate register; C2 advanced to PARTIAL (1/5) with cited evidence; all other gates untouched/untested.
+- Unresolved items that FUTURE tasks must close (not blockers for this docs task): Edge TTS reachability + fa-IR word timings (C1, at P6.2); rights register + permission drafts + automated scan (C2, at P1.2/P2.4); vendor/sync execution + red-test (C3, at P2.3); mobile thresholds + measurement (C4, at P5.5); reviewer identity + checklist (C5, at P6.4/P6.5).
+- Status: STOPPED — recommended next task: P1.2 (rights register + permission request drafts; advances C2; documentation only).

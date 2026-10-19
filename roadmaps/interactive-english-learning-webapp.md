@@ -33,6 +33,8 @@
 
 ## 2. Architecture and technology choices (with reasons)
 
+> **Ratified (P1.1, 2026-10-19):** Option C is the adopted architecture, **subject to gates C1–C5** (criteria + status in §5.1). No gate has been tested yet; if a gate fails, the documented fallback in §6 applies by default — architecture redesign is not triggered by a gate failure.
+
 | Choice | Reason |
 |---|---|
 | **Next.js (App Router) + TypeScript strict** | Candidate stack from the mandate; static lesson artifacts served from `public/`, app routes for shell/activities; strict mode enforces the typed-component mandate (#10). |
@@ -72,8 +74,8 @@ Dependency order follows the mandated P0→P11 sequence. Tasks are small and che
 
 ### P1 — Decide the integration architecture
 
-- [ ] **P1.1 Ratify Option C (hybrid)** and the five gating conditions C1–C5 with the approver.
-  - *AC:* approver confirms decision in chat; decision logged in §7 change log.
+- [x] **P1.1 Ratify Option C (hybrid)** and the five gating conditions C1–C5 with the approver.
+  - *AC:* approver confirms decision in chat; decision logged in §7 change log. ✔ **Ratified 2026-10-19** — owner approved "P1.1 as stated" and additionally directed that every gate be converted into explicit, testable acceptance criteria with honest pass/fail status → operationalized in **§5.1** (no gate is PASSED; statuses reflect only executed evidence).
 - [ ] **P1.2 Draft permission requests** for the two جزوه author groups (contacts `@JamalAhmadi1984`, Dr. Hassan Lotfi) stating intended interactive reuse; record status per source in `docs/content/RIGHTS_REGISTER.md`.
   - *AC:* register lists every uploaded source → decision (reference-only / pending-permission / permitted); zero copyrighted files tracked by git. *(Tip-level untracking already achieved early on 2026-10-19 via commit b9a1fe3 — historical blobs remain in local/auto-checkpoint history 252fe4d; history cleanup would be a separate owner-approved task.)*
 - [ ] **P1.3 Choose exact dependency versions** (Next.js, React, Tailwind, Zod, Vitest, Playwright) against this environment's Node 24/npm 11; pin in `package.json`.
@@ -206,6 +208,65 @@ Every task, before being marked `[x]`, must satisfy:
 5. **Roadmap + change log updated only after verification** (mandate #8), including files changed, commands executed, actual results, limitations, next proposed task (mandate #9).
 6. **Git**: meaningful commit per approved task; verify hash + branch. **Mandatory commit-and-push policy (set 2026-10-19):** inspect working tree → implement only the approved task → run checks → review full diff (secrets/unintended changes) → update roadmap/log with verified results only → commit → push to `origin` (`https://github.com/Sohrab1999/webapp.git`, private) → **independently verify via `git ls-remote origin` that the remote ref equals the local HEAD** → report files, real check results, commit hash, push status → STOP for approval. Never force-push, reset, rebase, or amend published commits; never commit secrets or copyrighted assets; never accumulate uncommitted task batches; never claim a push without hash verification.
 
+### 5.1 Architecture gates C1–C5 — testable acceptance criteria and status (added at P1.1 ratification, 2026-10-19)
+
+Per the owner's P1.1 ratification, Option C is adopted **subject to** the gates below. **Rule:** a criterion may be marked PASS only with recorded command output or an archived report artifact; a criterion not yet executed is PENDING; a gate with any PENDING criterion cannot pass. Criterion status: **PASS** (executed and met) · **FAIL** (executed, not met) · **PENDING** (not executed). Gate status: **UNTESTED / PARTIAL / NOT REACHED / PASSED**.
+
+**Summary (2026-10-19):** C1 **UNTESTED** (0/6) · C2 **PARTIAL** (1/5) · C3 **UNTESTED** (0/5) · C4 **UNTESTED** (0/3) · C5 **NOT REACHED** (0/3). **No gate is PASSED.**
+
+**C1 — fa-IR narration viability** *(assessment §9.1; spike owned by P6.2, applies to P6.1)*
+- Criteria (all must PASS):
+  1. PENDING — Edge TTS endpoint reachable from this sandbox (probe of `speech.platform.bing.com` documented, no DNS/proxy failure).
+  2. PENDING — at least one `fa-IR` voice synthesizes a Persian sample through the upstream `tts.py` unmodified; if Edge TTS is unreachable, the z-ai TTS alternative is evaluated in the same spike and the decision recorded.
+  3. PENDING — output MP3 validated with `ffprobe` (duration > 0, sane vs. text length).
+  4. PENDING — word-level timing data present and spot-checked usable for engine timed actions, **or** its absence is documented and a caption-driven fallback timing design recorded.
+  5. PENDING — ASCII-mark convention for Persian text demonstrated with a round-trip test case (V25: mark names/beat IDs must be ASCII).
+  6. PENDING — quality report archived at `docs/testing/TTS_SPIKE.md` with an explicit go/fallback decision.
+- Verified-fact evidence: V25 (`tts.py` has no per-entry locale; Kokoro timings English-only; ASCII marks mandatory), V24 (upstream README: "No image models, multilingual support, or BGM yet"), V20 (toolchain prerequisites present).
+- Assumptions (unverified): sandbox outbound HTTPS to the Edge TTS host; `fa-IR` voices exist upstream of the service; timing quality adequate for animation sync.
+- Unresolved (assessment §10.1–10.2): Edge TTS reachability; reliability of `fa-IR` word-boundary events in `tts.py` streaming mode.
+- On FAIL → fallback R2 (§6): English narration + Persian captions/text; decision recorded at P6.2.
+
+**C2 — Content rights register & licensing hygiene** *(assessment §9.2, §7; owned by P1.2, enforced later by P2.4/P9.3)*
+- Criteria:
+  1. **PASS** (verified 2026-10-19, commits 91c9e9f + b9a1fe3) — zero copyrighted files tracked at the git tip: pre-push `git ls-files` showed only `.env.example`, `.gitignore`, docs/, roadmaps/, worklog.md, download/README.md; `upload/` untracked and ignored.
+  2. PENDING — `docs/content/RIGHTS_REGISTER.md` exists listing every uploaded source (9 PDFs) with author/publisher, rights finding, intended use (reference-only / pending-permission / permitted), permission status + date, local-only path.
+  3. PENDING — draft permission requests for both جزوه author groups (contacts `@JamalAhmadi1984`, Dr. Hassan Lotfi) written and reviewable by the owner.
+  4. PENDING — OUP sources hard-marked "design reference only — never embed text/audio/exercises" in the register (assessment §7: s3 copyright page prohibits reproduction without OUP permission).
+  5. PENDING — automated enforcement (P2.4 `verify` forbidden-file scan: `*.pdf`, `books/*/pages/`) red on injected fixture, green on clean tree.
+- Verified-fact evidence: assessment §7 rights table (Ahmadi Vision 1–3 ed. 1401; Lotfi grades 7–9 ed. 1403 — author-copyrighted free distributions derived from Ministry-of-Education textbooks; OUP all rights reserved); V21 (upstream itself mandates keeping PDFs/page images out of version control); tip-tree listing recorded pre-push 2026-10-19.
+- Assumptions (unverified): the authors' free-distribution status makes a permission request appropriate; no new copyrighted assets will be introduced without a register entry.
+- Standing note: historical PDF blobs remain in auto-checkpoint commit 252fe4d; cleanup is a separate owner-approved decision; repo stays private meanwhile.
+
+**C3 — Engine vendor-sync hygiene** *(assessment §9.3; owned by P2.3, affects P5.6)*
+- Criteria:
+  1. PENDING — engine assets vendored from a pinned upstream commit into `vendor/engine/` byte-identical (`git diff` vs. reference empty).
+  2. PENDING — upstream `engine.py --check` (or documented equivalent) reports clean copies.
+  3. PENDING — `THIRD_PARTY_NOTICES.md` committed with MIT attribution + pinned upstream commit hash.
+  4. PENDING — sync command documented, tag-pinned, re-runnable; a deliberately injected local edit is DETECTED (red test) by the check.
+  5. PENDING — fork patches (e.g., P5.6 `fa`/RTL) applied as upstream-shaped patches, listed in the notices, re-appliable after upstream sync.
+- Verified-fact evidence: V10 (engine assets at `engine/`, per-book sync via `scripts/engine.py`), V9 (playback deterministic/offline-safe — vendoring does not change runtime behavior).
+- Assumptions (unverified): upstream repo/tag availability remains stable; MIT attribution suffices for our modification pattern.
+- Unresolved (§10.3): whether upstream accepts a `fa`/RTL contribution — nice-to-have, non-blocking (we maintain a fork either way).
+
+**C4 — Mobile playback quality spike** *(assessment §9.4; owned by P5.5, affects P10.4)*
+- Criteria:
+  1. PENDING — a real Papermorph chapter runs on Playwright mobile viewport(s) (Chromium + Firefox); rAF frame times sampled across beat transitions; median/p95 recorded in `docs/testing/MOBILE_SPIKE.md`.
+  2. PENDING — decision vs. predefined thresholds recorded (letterbox if met; tap-through/card fallback if missed); thresholds are fixed when P5.5 starts.
+  3. PENDING — touch operability (advance, quiz primitives) usable on the mobile viewport; any overlap/overflow logged with severity.
+- Verified-fact evidence: upstream `references/engine.md` §Performance documents the measurement method (cited in assessment); V20 (Playwright importable in this environment).
+- Assumptions (unverified): emulated mobile results are decision-grade for MVP; a real-device matrix is deferred to P10.4.
+- On FAIL → fallback R3 (§6): letterbox scaling / tap-through card mode.
+
+**C5 — Demonstration-lesson review (scope lock)** *(assessment §9.5; owned by P6.5, unlocks P7+)*
+- Criteria:
+  1. PENDING — demo lesson (Vision One L1 candidate) playable end-to-end (chapter + activities + assessment) in desktop Chrome + Firefox with progress restore (P6.3 ACs).
+  2. PENDING — teacher review package delivered (storyboard, `?review` notes, provenance sheet) via `serve.py` preview.
+  3. PENDING — human reviewer completes the checklist and records explicit approval; only then is any item flagged `human-reviewed` and P7+ unlocked.
+- Verified-fact evidence: V13 (localStorage progress contract `animebook:progress:`), V9 (offline playback) — the technical basis for a reviewable static artifact.
+- Assumptions (unverified): reviewer identity (owner vs. teacher) and checklist format — to be fixed at P6.4.
+- On FAIL/BLOCKED → scope stays locked at one lesson; bulk conversion (P7+) remains prohibited (R6).
+
 ### Security / accessibility / provenance / licensing checklist (per release)
 
 - [ ] No secrets or API keys in client code; `.env` untracked (R8).
@@ -238,8 +299,9 @@ Every task, before being marked `[x]`, must satisfy:
 | 2026-10-19 | P0.1–P0.4 | Phase 0 executed: workspace + git inspected; actual Papermorph repo investigated (README, SKILL.md, references, scripts, engine, i18n, TTS); toolchain verified; uploaded sources rights-reviewed; assessment written with **GO — conditional**. | `[x]` completed & verified |
 | 2026-10-19 | P1 (plan) | Roadmap created; integration Option C recommended (hybrid: vendored engine + app-native activity layer + GLM authoring playbook); first implementation task proposed: **P3.1** (schema), with P2 scaffolding as the alternative first step if approver prefers. | planned (awaiting approval) |
 | 2026-10-19 | Git/GitHub setup + security remediation (user-directed, between P1 and P2/P3) | **Audit:** `.env` (blob 769ebf2, since b913648) contains only `DATABASE_URL=file:…/db/custom.db` — a local SQLite path, **no credential** → nothing to rotate; `github_pat_` pattern: 0 matches in all history. **Discrepancy found:** environment auto-checkpoint 252fe4d (UUID subject) had silently tracked 9 copyrighted PDFs (~64 MB) — investigated, documented. **Remediation:** `91c9e9f` untracks `.env` (local file kept), adds env-hygiene `.gitignore` rules + placeholder-only `.env.example`; `b9a1fe3` untracks `upload/` PDFs (local copies kept), ignores `upload/`. **Remote:** `origin = https://github.com/Sohrab1999/webapp.git` (verified via API: private, default branch `main`, token has push); PAT stored outside repo (`/home/z/.secrets/`, 0600) behind a git credential helper — absent from URLs/config/logs/commits. **Push verified:** `main` → `origin/main`, `git ls-remote` hash == local HEAD `b9a1fe3f6366ed800b77163ab8f626c0c4c85ef0`. Historical blobs (non-secret `.env` blob; PDF blobs) remain in earlier commits — history rewrite NOT performed (requires explicit owner approval). | `[x]` completed & verified |
+| 2026-10-19 | P1.1 | **Option C ratified by owner** ("approved as stated"), subject to gates C1–C5. Gates operationalized into explicit, testable criteria with honest statuses in new §5.1: C1 UNTESTED (0/6) · C2 PARTIAL (1/5 — only the tip-level zero-copyrighted-files criterion has executed evidence: 91c9e9f + b9a1fe3 pre-push tree listing) · C3 UNTESTED (0/5) · C4 UNTESTED (0/3) · C5 NOT REACHED (0/3). **No gate PASSED.** Verified facts (V-refs), assumptions (labelled unverified), and unresolved questions (assessment §10) kept distinct per gate. §2 annotated with ratification banner. Explicitly NOT claimed (owner constraint): Persian TTS viability, mobile compatibility, Papermorph/GLM authoring compatibility — all untested. No product code, no scaffolding, no P3.1. | `[x]` completed & verified |
 
-**Currently in progress:** none (workflow gate: awaiting approver's decision on P1.1).
-**Blocked:** none (P6.2 TTS spike becomes the first potentially blocked task if sandbox network restricts Edge TTS).
-**Next proposed task:** **P1.1 — Ratify Option C (hybrid) and gates C1–C5** (single approval decision that unlocks P1.2/P1.3 and then the first implementation task, **P3.1**, per the approver's stated intent).
-**Standing notes:** repo `Sohrab1999/webapp` is private — keep it private until any owner-approved history cleanup; PDF blobs and the non-secret `.env` blob remain in earlier history (252fe4d / b913648).
+**Currently in progress:** none (workflow gate: P1.1 ratified 2026-10-19; next task awaits owner approval).
+**Blocked:** none (C1 becomes the first potentially blocked gate if the sandbox cannot reach Edge TTS — decision lands at P6.2).
+**Next proposed task:** **P1.2 — Content rights register + permission request drafts** (`docs/content/RIGHTS_REGISTER.md`; advances gate C2 from PARTIAL toward PASS; documentation only, no product code).
+**Standing notes:** repo `Sohrab1999/webapp` is private — keep it private until any owner-approved history cleanup; PDF blobs and the non-secret `.env` blob remain in earlier history (252fe4d / b913648). Gate statuses live in §5.1 and change only with recorded evidence.

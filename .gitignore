@@ -8,3 +8,6 @@ node_modules/
 
 # Copyrighted source PDFs — local reference only, never committed/pushed
 upload/
+
+# Environment scratch (persisted tool output) — never committed
+tool-results/
