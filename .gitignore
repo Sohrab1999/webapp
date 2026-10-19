@@ -5,3 +5,6 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# Copyrighted source PDFs — local reference only, never committed/pushed
+upload/
