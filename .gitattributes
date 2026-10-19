@@ -1,0 +1,7 @@
+# Vendored third-party files stay byte-exact on every OS / git configuration,
+# so the sha256 manifest (vendor/engine.manifest) checked by
+# scripts/sync-papermorph.sh --check holds everywhere. Mirrors upstream's own
+# `engine/vendor/** -text` hygiene for the MathJax bundle.
+vendor/engine/** -text
+vendor/engine.py -text
+vendor/LICENSE -text

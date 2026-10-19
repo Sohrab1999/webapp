@@ -33,6 +33,7 @@ dependencies or regenerate the lockfile as part of feature tasks.
 | `npm run typecheck` | `tsc --noEmit` with strict mode enabled |
 | `npm run test` | Vitest test runner (no test files exist yet — tests arrive with the first logic task) |
 | `npm run e2e` | Playwright test runner (browser binaries are not downloaded yet — deferred per roadmap) |
+| `scripts/sync-papermorph.sh` | Sync the vendored Papermorph engine to the pinned upstream commit (`--dry-run` / `--check` modes; see `docs/architecture/PAPERMORPH_VENDORING.md`) |
 
 ## Project layout
 
@@ -43,6 +44,8 @@ dependencies or regenerate the lockfile as part of feature tasks.
 - `src/app/globals.css` — Tailwind CSS 4 entry + base layer (lang-driven font selection, heading defaults, focus ring, reduced motion)
 - `src/app/tokens/page.tsx` — storybook-style demo of the token system (development artifact, not a product page)
 - `public/fonts/` — self-hosted font files with their verbatim license texts
+- `vendor/` — vendored Papermorph engine (`vendor/engine/` + `vendor/engine.py`, byte-identical to the pinned upstream commit; do not hand-edit — sync via the script above)
+- `THIRD_PARTY_NOTICES.md` — license/attribution record for vendored third-party software
 - `next.config.ts` — wires `@tailwindcss/turbopack` via `turbopack.rules` (no PostCSS config on this path)
 - `roadmaps/`, `docs/`, `worklog.md` — roadmap, architecture/rights documentation, append-only work log
 

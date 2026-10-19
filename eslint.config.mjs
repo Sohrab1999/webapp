@@ -16,6 +16,10 @@ const eslintConfig = defineConfig([
     "tool-results/**",
     // Platform-provided environment material, not part of this repo (gitignored):
     "skills/**",
+    // Vendored third-party sources (unmodified upstream Papermorph engine, see
+    // docs/architecture/PAPERMORPH_VENDORING.md) — upstream code is never
+    // re-styled to fit app lint conventions; the app boundary is src/.
+    "vendor/**",
   ]),
 ]);
 

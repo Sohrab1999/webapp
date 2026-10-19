@@ -1,0 +1,27 @@
+# Papermorph upstream pin — single source of truth for scripts/sync-papermorph.sh
+#
+# Why a commit SHA and not a tag: as of 2026-10-20 the upstream repository has
+# NO published releases and NO git tags (verified: `git ls-remote` shows only
+# refs/heads/main + refs/heads/develop + PR refs; the GitHub releases page
+# shows "There aren't any releases here"). The immutable commit below is the
+# exact revision the approved architecture assessment
+# (docs/architecture/PAPERMORPH_ASSESSMENT.md, checked 2026-10-19) was
+# verified against, so its provenance is already vetted by P0/P1.
+#
+# To update the pin: edit UPSTREAM_COMMIT / *_SHA256 here, review the diff,
+# then run `scripts/sync-papermorph.sh` and commit the result. The script
+# never bumps the pin by itself.
+#
+UPSTREAM_URL=https://github.com/DozenTwelve/Papermorph
+UPSTREAM_TAG=none
+UPSTREAM_COMMIT=45533ecaf3e6b0b944499126434bd7f28cd39710
+UPSTREAM_COMMIT_DATE=2026-10-19
+UPSTREAM_COMMIT_SUBJECT=Merge pull request #12 from titulartarantula/feat/scorm-export
+PINNED_ON=2026-10-20
+VENDOR_DIR=vendor/engine
+VENDOR_ENGINE_PY=vendor/engine.py
+VENDOR_LICENSE=vendor/LICENSE
+VENDOR_MANIFEST=vendor/engine.manifest
+# Integrity anchors recorded at pin time (sha256, `sha256sum` format):
+LICENSE_SHA256=41857092247a8ad84a53859ffe7abfae3209a4ba209547e4fc3f17ccd0892b8f
+ENGINE_PY_SHA256=3665a73c7abada3cc5cca610f23e83fa7d4f5e4d0cfed173a031b81fc4234a79
