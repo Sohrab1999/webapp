@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Canonical verification workflow — roadmap task P2.4 (`npm run verify`).
 //
-// Runs, in this documented order (roadmap §5.4):
+// Runs, in this documented order (roadmap §5.4 + P3.3):
 //   1. TypeScript type-checking        — `npm run typecheck` (tsc --noEmit)
 //   2. ESLint                          — `npm run lint`
 //   3. Automated tests                 — `npm run test` (Vitest) when test
@@ -10,9 +10,12 @@
 //                                        "no tests discovered" notice — it is
 //                                        never reported as coverage, and the
 //                                        distinction is visible in the summary.
-//   4. Production build                — `npm run build`
-//   5. Repository secret scan          — `node scripts/scan-secrets.mjs`
-//   6. Forbidden-file/hygiene scan     — `node scripts/scan-forbidden-files.mjs`
+//   4. Content validation              — `npm run content:check` (P3.3:
+//                                        schema + rights-register cross-check
+//                                        of everything under content/)
+//   5. Production build                — `npm run build`
+//   6. Repository secret scan          — `node scripts/scan-secrets.mjs`
+//   7. Forbidden-file/hygiene scan     — `node scripts/scan-forbidden-files.mjs`
 //
 // Behavior:
 // - Independent checks all run even after an earlier failure, so one run
@@ -91,8 +94,8 @@ function runStep({ cmd, args, requiredScript }) {
 export function main() {
   banner("npm run verify — repository verification workflow");
   process.stdout.write(
-    "Order: 1 typecheck → 2 lint → 3 tests → 4 build → 5 secret scan → " +
-      "6 forbidden-file scan.\n" +
+    "Order: 1 typecheck → 2 lint → 3 tests → 4 content:check → 5 build → " +
+      "6 secret scan → 7 forbidden-file scan.\n" +
       "Independent checks all run (one run = full diagnostics); the final " +
       "exit code is nonzero if any required check failed.\n",
   );
@@ -145,6 +148,15 @@ export function main() {
     );
   }
 
+  // 4: content validation (P3.3) — schema + rights-register cross-check.
+  step("content-check", "Content validation (npm run content:check)", () =>
+    runStep({
+      cmd: "npm",
+      args: ["run", "content:check"],
+      requiredScript: "content:check",
+    }),
+  );
+
   step("build", "Production build (npm run build)", () =>
     runStep({
       cmd: "npm",
@@ -153,7 +165,7 @@ export function main() {
     }),
   );
 
-  // 5–6: repository safety scans (project-owned, no extra dependencies).
+  // 6–7: repository safety scans (project-owned, no extra dependencies).
   step("secret-scan", "Repository secret scan", () =>
     runStep({
       cmd: process.execPath,

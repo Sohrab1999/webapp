@@ -17,6 +17,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "e2e": "playwright test",
+    "content:check": "node scripts/content-check.mjs",
     "verify": "node scripts/verify.mjs"
   },
   "dependencies": {
