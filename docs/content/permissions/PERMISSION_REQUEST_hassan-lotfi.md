@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Status** | **DRAFT — NOT SENT. ارسال نشود.** For owner review only (roadmap P1.2). Nothing has been sent, and permission is NOT granted or implied. |
+| **Status** | **DRAFT — NOT SENT. ارسال نشود.** For owner review only (roadmap P1.2). Nothing has been sent, and permission is NOT granted or implied. **Update 2026-10-20:** the project owner reports this request was answered with a grant covering R-04–R-06 — see the `RIGHTS_REGISTER.md` change log and rule 7. The written reply is pending archival here; until archived, the grant stays flagged "owner-reported — written evidence pending". |
 | **Recipient** | Dr. Hassan Lotfi (دکتر حسن لطفی) — teacher at high schools of Bukan county («دبیر دبیرستان‌های شهرستان بوکان», as stated on his covers) |
 | **Verified contact (only this may be used)** | Phone/Telegram/Instagram: `09141842803` — published by the author on the cover of all three booklets («تلگرام و اینستاگرام و تماس»; register VF-3). No email address is on file; none may be invented. |
 | **Materials concerned** | Register items R-04, R-05, R-06 — «جزوه کامل زبان انگلیسی پایه هفتم», «… پایه هشتم», «… پایه نهم», new edition («ویرایش جدید»), summer 1403 |

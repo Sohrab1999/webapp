@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| **Status** | **DRAFT — NOT SENT. ارسال نشود.** For owner review only (roadmap P1.2). Nothing has been sent, and permission is NOT granted or implied. |
+| **Status** | **DRAFT — NOT SENT. ارسال نشود.** For owner review only (roadmap P1.2). Nothing has been sent, and permission is NOT granted or implied. **Update 2026-10-20:** the project owner reports this request was answered with a grant covering R-01–R-03 — see the `RIGHTS_REGISTER.md` change log and rule 7. The written reply is pending archival here; until archived, the grant stays flagged "owner-reported — written evidence pending". |
 | **Recipient** | Jamal Ahmadi (جمال احمدی) — author/compiler of the three "Vision" booklets |
 | **Verified contact (only this may be used)** | Telegram/WhatsApp/«شاد»: `@JamalAhmadi1984` — published by the author in the front matter of all three booklets (register VF-2). No email address is on file; none may be invented. |
 | **Materials concerned** | Register items R-01, R-02, R-03 — «جزوه جامع دهم» ("Vision One"), «جزوه جامع کمک آموزش زبان انگلیسی: Vision Two», «جزوه جامع کمک آموزش زبان انگلیسی: Vision Three», third edition Mehr 1401 |

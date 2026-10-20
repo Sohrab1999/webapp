@@ -2,131 +2,131 @@
   "id": "vision-1-l01",
   "courseId": "vision-1",
   "number": 1,
-  "title": "A New School Year",
-  "titleFa": "سال تحصیلی جدید",
+  "title": "Saving Nature",
+  "titleFa": "نجات طبیعت",
   "objectives": [
-    "Introduce yourself and greet a new classmate",
-    "Talk about daily school routines using the present simple",
-    "Use frequency adverbs such as always, usually, and never before the main verb"
+    "Talk about future actions and decisions with will and won't",
+    "Learn and use key vocabulary about nature and protecting wildlife",
+    "Tell common nouns and proper nouns apart in simple sentences"
   ],
   "vocab": [
     {
       "id": "vision-1-l01-vocab-01",
-      "term": "classmate",
-      "meaningFa": "هم‌کلاسی",
+      "term": "cheetah",
+      "meaningFa": "یوزپلنگ",
       "pos": "noun",
-      "example": "My classmates are friendly and helpful.",
-      "exampleFa": "هم‌کلاسی‌های من مهربان و مفید هستند.",
+      "example": "The Asiatic cheetah lives only in Iran.",
+      "exampleFa": "یوزپلنگ آسیایی فقط در ایران زندگی می‌کند.",
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     },
     {
       "id": "vision-1-l01-vocab-02",
-      "term": "semester",
-      "meaningFa": "نیم‌سال تحصیلی",
-      "pos": "noun",
-      "example": "The first semester starts in Mehr.",
-      "exampleFa": "نیم‌سال اول در مهر شروع می‌شود.",
+      "term": "destroy",
+      "meaningFa": "نابود کردن، تخریب کردن",
+      "pos": "verb",
+      "example": "Pollution can destroy the homes of many animals.",
+      "exampleFa": "آلودگی می‌تواند خانهٔ بسیاری از حیوانات را نابود کند.",
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     },
     {
       "id": "vision-1-l01-vocab-03",
-      "term": "subject",
-      "meaningFa": "مادهٔ درسی",
+      "term": "forest",
+      "meaningFa": "جنگل",
       "pos": "noun",
-      "example": "Mathematics is my favourite subject.",
-      "exampleFa": "ریاضی مادهٔ درسی مورد علاقهٔ من است.",
+      "example": "There are many tall trees in this forest.",
+      "exampleFa": "در این جنگل درختان بلند زیادی وجود دارد.",
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     },
     {
       "id": "vision-1-l01-vocab-04",
-      "term": "timetable",
-      "meaningFa": "برنامهٔ هفتگی",
+      "term": "hunter",
+      "meaningFa": "شکارچی، صیاد",
       "pos": "noun",
-      "example": "Our timetable has English on Saturdays and Mondays.",
-      "exampleFa": "برنامهٔ هفتگی ما روزهای شنبه و دوشنبه زبان دارد.",
+      "example": "A hunter must follow the rules of the national park.",
+      "exampleFa": "یک شکارچی باید قواعد پارک ملی را رعایت کند.",
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     },
     {
       "id": "vision-1-l01-vocab-05",
-      "term": "recess",
-      "meaningFa": "زنگ تفریح",
-      "pos": "noun",
-      "example": "We play football at recess.",
-      "exampleFa": "در زنگ تفریح فوتبال بازی می‌کنیم.",
+      "term": "identify",
+      "meaningFa": "شناسایی کردن، تشخیص دادن",
+      "pos": "verb",
+      "example": "Rangers identify the places where cheetahs live.",
+      "exampleFa": "بهیاران مکان‌هایی را که یوزپلنگ‌ها زندگی می‌کنند شناسایی می‌کنند.",
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     },
     {
       "id": "vision-1-l01-vocab-06",
-      "term": "review",
-      "meaningFa": "مرور کردن",
+      "term": "increase",
+      "meaningFa": "افزایش یافتن، افزایش دادن؛ افزایش",
       "pos": "verb",
-      "example": "I review my notes before the quiz.",
-      "exampleFa": "قبل از آزمون یادداشت‌هایم را مرور می‌کنم.",
+      "example": "The number of cheetahs will increase if we protect them.",
+      "exampleFa": "اگر از یوزپلنگ‌ها محافظت کنیم، تعداد آن‌ها افزایش خواهد یافت.",
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     },
     {
       "id": "vision-1-l01-vocab-07",
-      "term": "practice",
-      "meaningFa": "تمرین کردن",
-      "pos": "verb",
-      "example": "I practice English for twenty minutes every day.",
-      "exampleFa": "هر روز بیست دقیقه انگلیسی تمرین می‌کنم.",
+      "term": "injured",
+      "meaningFa": "مجروح، زخمی",
+      "pos": "adjective",
+      "example": "The vet took care of the injured bird.",
+      "exampleFa": "دامپزشک از پرندهٔ مجروح مراقبت کرد.",
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     },
     {
       "id": "vision-1-l01-vocab-08",
-      "term": "excellent",
-      "meaningFa": "عالی",
-      "pos": "adjective",
-      "example": "Her pronunciation is excellent.",
-      "exampleFa": "تلفظ او عالی است.",
+      "term": "kill",
+      "meaningFa": "کشتن، به قتل رساندن",
+      "pos": "verb",
+      "example": "People must not kill animals for fun.",
+      "exampleFa": "انسان‌ها نباید حیوانات را برای سرگرمی بکشند.",
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     },
     {
       "id": "vision-1-l01-vocab-09",
-      "term": "difficult",
-      "meaningFa": "دشوار",
-      "pos": "adjective",
-      "example": "This word is difficult, but useful.",
-      "exampleFa": "این واژه دشوار است، اما کاربردی.",
+      "term": "lake",
+      "meaningFa": "دریاچه",
+      "pos": "noun",
+      "example": "The lake near our city is home to many birds.",
+      "exampleFa": "دریاچهٔ نزدیک شهر ما خانهٔ پرندگان بسیاری است.",
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     },
     {
       "id": "vision-1-l01-vocab-10",
-      "term": "get to know",
-      "meaningFa": "آشنا شدن (با کسی یا چیزی)",
-      "pos": "phrase",
-      "example": "I want to get to know my new classmates.",
-      "exampleFa": "می‌خواهم با هم‌کلاسی‌های جدیدم آشنا شوم.",
+      "term": "lifespan",
+      "meaningFa": "طول عمر",
+      "pos": "noun",
+      "example": "A tortoise has a long lifespan.",
+      "exampleFa": "لاک‌پشت عمر طولانی دارد.",
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     }
@@ -134,110 +134,110 @@
   "grammar": [
     {
       "id": "vision-1-l01-grammar-01",
-      "title": "Present simple for routines",
-      "titleFa": "زمان حال ساده برای کارهای روزمره",
-      "explanation": "Use the present simple to talk about habits and routines. With he, she, or it, add -s (or -es) to the verb.",
-      "explanationFa": "زمان حال ساده را برای عادت‌ها و کارهای روزمره به کار می‌بریم. با فاعل سوم‌شخص مفرد (he، she، it) به آخر فعل، s (یا es) اضافه می‌کنیم.",
+      "title": "Simple Future Tense (will)",
+      "titleFa": "زمان آینده ساده",
+      "explanation": "Use the simple future with will for an action that will happen in the future, often without a previous plan. Put will before the simple form of the verb. Negatives use will not or the short form won't, and questions move will to the front of the sentence. Time words like tomorrow, soon, later, next, and future are common markers of this tense.",
+      "explanationFa": "زمان آینده ساده را برای عملی به کار می‌بریم که در آینده انجام می‌شود و اغلب برنامه‌ریزی قبلی ندارد. این زمان با فعل کمکی will ساخته می‌شود و پس از آن همواره شکل ساده فعل می‌آید. برای منفی کردن از will not یا شکل کوتاه won't استفاده می‌کنیم و برای سوالی کردن، will را به ابتدای جمله منتقل می‌کنیم. واژه‌های زمانی مانند tomorrow، soon، later و future از نشانه‌های رایج این زمان در تست‌ها هستند.",
       "examples": [
-        { "en": "We study English on Saturdays.", "fa": "ما روزهای شنبه زبان می‌خوانیم." },
-        { "en": "My sister walks to school.", "fa": "خواهرم پیاده به مدرسه می‌رود." }
+        { "en": "Maybe people will save endangered animals in the future.", "fa": "احتمالاً مردم حیوانات در معرض خطر انقراض را در آینده نجات خواهند داد." },
+        { "en": "We will not (won't) have an exam tomorrow.", "fa": "ما فردا امتحان نخواهیم داشت." }
       ],
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 grammar: Simple Future Tense, p. 56" },
         "status": "ai-draft"
       }
     },
     {
       "id": "vision-1-l01-grammar-02",
-      "title": "Adverbs of frequency",
-      "titleFa": "قیدهای تکرار",
-      "explanation": "Words like always, usually, sometimes, and never say how often something happens. Put them before the main verb.",
-      "explanationFa": "واژه‌هایی مانند always، usually، sometimes و never نشان می‌دهند کاری چقدر تکرار می‌شود. این قیدها را قبل از فعل اصلی می‌گذاریم.",
+      "title": "Common and Proper Nouns",
+      "titleFa": "اسم‌های عام و اسم‌های خاص",
+      "explanation": "A common noun names any member of a group, such as boy, city, or forest, and its first letter stays small. A proper noun names one particular person, place, or thing, such as Boukan, Italy, or Milad Tower, and always begins with a capital letter. Proper nouns usually do not take articles, and their verb is singular.",
+      "explanationFa": "اسم عام برای نامیدن کلی افراد، حیوانات، مکان‌ها، اشیا و عقیده‌ها به کار می‌رود و حرف اول آن کوچک نوشته می‌شود؛ مانند boy، city و forest. اسم خاص فقط یک نمونه در دنیا دارد و حرف اول آن همیشه بزرگ است؛ مانند Boukan، Italy و Milad Tower. اسم خاص معمولاً حرف تعریف نمی‌گیرد و فعل همراه آن همواره مفرد است.",
       "examples": [
-        { "en": "I always review my notes after class.", "fa": "من همیشه بعد از کلاس یادداشت‌هایم را مرور می‌کنم." },
-        { "en": "She is never late for school.", "fa": "او هرگز برای مدرسه دیر نمی‌کند." }
+        { "en": "I see some cars in the street.", "fa": "من تعدادی اتومبیل در خیابان می‌بینم." },
+        { "en": "There are many computers in this shop.", "fa": "تعداد زیادی کامپیوتر در این فروشگاه وجود دارد." }
       ],
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 writing: types of nouns, p. 61" },
         "status": "ai-draft"
       }
     }
   ],
   "dialogue": {
     "id": "vision-1-l01-dialogue-01",
-    "title": "In the schoolyard",
-    "titleFa": "در حیاط مدرسه",
+    "title": "At the Nature Club",
+    "titleFa": "در باشگاه طبیعت",
     "lines": [
       {
-        "speaker": "Sara",
-        "en": "Hi! I'm Sara. Are you in the English class too?",
-        "fa": "سلام! من سارا هستم. تو هم در کلاس زبان هستی؟"
+        "speaker": "Ali",
+        "en": "Our school started a nature club this year. Will you join it?",
+        "fa": "مدرسهٔ ما امسال یک باشگاه طبیعت راه انداخت. تو عضو می‌شوی؟"
       },
       {
-        "speaker": "Reza",
-        "en": "Yes, I am. I'm Reza. Nice to meet you.",
-        "fa": "بله، هستم. من رضا هستم. از آشنایی با تو خوشبختم."
+        "speaker": "Maryam",
+        "en": "Yes, I will! This Saturday we will plant trees near the lake.",
+        "fa": "بله، عضو می‌شوم! این شنبه نزدیک دریاچه درخت می‌کاریم."
       },
       {
-        "speaker": "Sara",
-        "en": "Nice to meet you too. Do you like our new timetable?",
-        "fa": "من هم از آشنایی با تو خوشبختم. برنامهٔ هفتگی جدیدمان را دوست داری؟"
+        "speaker": "Ali",
+        "en": "Great! I will bring my gloves. Last year hunters killed many animals there.",
+        "fa": "عالی است! دستکش‌هایم را خواهم آورد. پارسال شکارچیان حیوانات زیادی را آنجا کشتند."
       },
       {
-        "speaker": "Reza",
-        "en": "I like it, but English is always the last class on Saturdays.",
-        "fa": "دوستش دارم، اما روزهای شنبه کلاس زبان همیشه آخر است."
+        "speaker": "Maryam",
+        "en": "That is sad. If we take care of nature, the number of animals will increase.",
+        "fa": "غم‌انگیز است. اگر از طبیعت مراقبت کنیم، تعداد حیوانات افزایش خواهد یافت."
       },
       {
-        "speaker": "Sara",
-        "en": "That's okay. I usually review new words after class. It helps a lot.",
-        "fa": "اشکالی ندارد. من معمولاً بعد از کلاس لغت‌های جدید را مرور می‌کنم. خیلی کمک می‌کند."
+        "speaker": "Ali",
+        "en": "Right. My uncle says the Asiatic cheetah is in danger.",
+        "fa": "درست است. عمویم می‌گوید یوزپلنگ آسیایی در خطر است."
       },
       {
-        "speaker": "Reza",
-        "en": "Good idea! Let's practice together at recess.",
-        "fa": "فکر خوبی است! بیا در زنگ تفریح با هم تمرین کنیم."
+        "speaker": "Maryam",
+        "en": "Then we will identify safe places for it and tell other students about them.",
+        "fa": "پس ما جای امنی برای آن شناسایی می‌کنیم و به دانش‌آموزان دیگر هم می‌گوییم."
       }
     ],
     "provenance": {
-      "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+      "source": { "kind": "author-created", "note": "Original dialogue authored for this app as an AI-assisted first draft (P3.2 amendment); not copied from the official Vision 1 Student Book, the workbook, or the R-01 booklet's textbook-derived sections." },
       "status": "ai-draft"
     }
   },
   "reading": {
     "id": "vision-1-l01-reading-01",
-    "title": "Sara's School Week",
-    "titleFa": "هفتهٔ مدرسهٔ سارا",
+    "title": "The Asiatic Cheetah",
+    "titleFa": "یوزپلنگ آسیایی",
     "paragraphs": [
-      "Sara is a tenth-grade student. Her school week starts on Saturday and ends on Wednesday. English is her favourite subject, and it appears on her timetable three times a week.",
-      "Every day after class, Sara reviews her new English words for fifteen minutes. She usually studies with her classmate Mina at recess. On Thursdays there is no school, so she practices at home with a simple rule: read one page and learn two new words."
+      "The Asiatic cheetah is one of the rarest wild cats in the world, and today it lives only in Iran. Its lifespan is about ten years. In the past, hunters killed many cheetahs, and roads and farms destroyed large parts of their homes.",
+      "Now many people in Iran work to save this beautiful animal. Rangers identify the places where cheetahs live and protect them. If we take care of nature, the number of cheetahs will increase, and future generations will see them alive."
     ],
     "questions": [
       {
         "kind": "truefalse",
         "id": "vision-1-l01-reading-01-q1",
-        "prompt": "True or false: Sara reviews her new English words every day.",
-        "statement": "Sara reviews her new English words every day.",
+        "prompt": "True or false: The Asiatic cheetah lives only in Iran.",
+        "statement": "The Asiatic cheetah lives only in Iran.",
         "answer": true,
         "provenance": {
-          "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+          "source": { "kind": "author-created", "note": "Original question authored for this app as an AI-assisted first draft (P3.2 amendment); not copied from the official Vision 1 Student Book, the workbook, or the R-01 booklet's textbook-derived sections." },
           "status": "ai-draft"
         }
       },
       {
         "kind": "choice",
         "id": "vision-1-l01-reading-01-q2",
-        "prompt": "Who studies with Sara at recess?",
-        "options": ["Her classmate Mina", "Her teacher"],
+        "prompt": "What will make the number of cheetahs increase?",
+        "options": ["Taking care of nature", "Building more roads"],
         "answerIndex": 0,
         "provenance": {
-          "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+          "source": { "kind": "author-created", "note": "Original question authored for this app as an AI-assisted first draft (P3.2 amendment); not copied from the official Vision 1 Student Book, the workbook, or the R-01 booklet's textbook-derived sections." },
           "status": "ai-draft"
         }
       }
     ],
     "provenance": {
-      "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+      "source": { "kind": "author-created", "note": "Original reading authored for this app as an AI-assisted first draft (P3.2 amendment); not copied from the official Vision 1 Student Book, the workbook, or the R-01 booklet's textbook-derived sections." },
       "status": "ai-draft"
     }
   },
@@ -245,83 +245,90 @@
     {
       "kind": "choice",
       "id": "vision-1-l01-q01",
-      "prompt": "My brother ___ to school by bus every morning.",
-      "options": ["go", "goes"],
-      "answerIndex": 1,
+      "prompt": "A: Please buy a notebook for me. B: OK. I ___ it.",
+      "promptFa": "گفت‌وگو را کامل کن: پس از درخواستِ همکلاسی‌ات چه می‌گویی؟",
+      "options": ["will buy", "buy"],
+      "answerIndex": 0,
       "feedback": {
-        "correct": "Correct — with he, she, or it, the present simple verb takes -s.",
-        "correctFa": "درست است — با سوم‌شخص مفرد، فعل حال ساده s می‌گیرد.",
-        "wrong": "With he, she, or it, the present simple verb takes -s.",
-        "wrongFa": "با he، she یا it، فعل حال ساده s می‌گیرد."
+        "correct": "Correct — will shows a decision made at the moment of speaking.",
+        "correctFa": "درست است — will برای تصمیمی است که همان لحظهٔ سخن گفتن گرفته می‌شود.",
+        "wrong": "Use will for a decision made at the moment of speaking.",
+        "wrongFa": "برای تصمیمی که همان لحظه گرفته می‌شود از will استفاده کن."
       },
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 grammar: Simple Future Tense, p. 56" },
         "status": "ai-draft"
       }
     },
     {
       "kind": "choice",
       "id": "vision-1-l01-q02",
-      "prompt": "Where can you see which classes you have on Monday?",
-      "promptFa": "کجا می‌توانی ببینی دوشنبه چه کلاس‌هایی داری؟",
-      "options": ["In the timetable", "At recess"],
+      "prompt": "A person who hunts wild animals is called a ___.",
+      "promptFa": "به کسی که حیوانات وحشی را شکار می‌کند چه می‌گویند؟",
+      "options": ["hunter", "farmer"],
       "answerIndex": 0,
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 descriptive vocabulary test, p. 49" },
         "status": "ai-draft"
       }
     },
     {
       "kind": "choice",
       "id": "vision-1-l01-q03",
-      "prompt": "Your classmate says: \"Nice to meet you.\" What do you answer?",
-      "promptFa": "هم‌کلاسی‌ات می‌گوید «از آشنایی با تو خوشبختم». چه پاسخی می‌دهی؟",
-      "options": ["\"Nice to meet you, too.\"", "\"I am fine, thanks.\""],
+      "prompt": "Which sentence talks about the future?",
+      "promptFa": "کدام جمله دربارهٔ آینده است؟",
+      "options": ["We will plant trees on Saturday.", "We planted trees last Friday."],
       "answerIndex": 0,
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "author-created", "note": "Original question authored for this app as an AI-assisted first draft (P3.2 amendment); not copied from the official Vision 1 Student Book, the workbook, or the R-01 booklet's textbook-derived sections." },
         "status": "ai-draft"
       }
     },
     {
       "kind": "blanks",
       "id": "vision-1-l01-q04",
-      "prompt": "Complete the sentence with the correct words.",
-      "promptFa": "جمله را با واژه‌های درست کامل کن.",
-      "text": "Every morning I ___ at six, and in the evening I ___ my homework.",
-      "answers": ["get up", "do"],
+      "prompt": "Complete the sentence with the correct word.",
+      "promptFa": "جمله را با واژهٔ درست کامل کن.",
+      "text": "If we ___ care of cheetahs, the number of them will increase.",
+      "answers": ["take"],
+      "feedback": {
+        "correct": "Correct — take care of means to protect and look after.",
+        "correctFa": "درست است — take care of یعنی مراقبت کردن و نگهداری کردن.",
+        "wrong": "The phrase is take care of.",
+        "wrongFa": "عبارت درست take care of است."
+      },
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 descriptive vocabulary test, p. 49" },
         "status": "ai-draft"
       }
     },
     {
       "kind": "grid",
       "id": "vision-1-l01-q05",
-      "prompt": "Which sentences use the present simple correctly?",
-      "promptFa": "کدام جمله‌ها زمان حال ساده را درست به کار برده‌اند؟",
+      "prompt": "Is the noun used correctly? Sort each sentence.",
+      "promptFa": "کاربرد اسم‌ها درست است؟ هر جمله را دسته‌بندی کن.",
       "columns": [
         { "key": "correct", "label": "Correct" },
         { "key": "incorrect", "label": "Incorrect" }
       ],
       "rows": [
         {
-          "statement": "She always do her homework.",
+          "statement": "We visited the Boukan last summer.",
           "answerKeys": ["incorrect"],
-          "why": "With she, the verb must be does, not do."
+          "why": "Proper nouns usually do not take the."
         },
         {
-          "statement": "We study English on Saturdays.",
+          "statement": "My uncle lives in a small city near the forest.",
           "answerKeys": ["correct"]
         },
         {
-          "statement": "My father never watch TV in the morning.",
+          "statement": "italy is famous for its old cities.",
           "answerKeys": ["incorrect"],
-          "why": "With my father (he), watch becomes watches."
+          "why": "Proper nouns begin with a capital letter."
         }
       ],
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "author-created", "note": "Original question authored for this app as an AI-assisted first draft (P3.2 amendment); not copied from the official Vision 1 Student Book, the workbook, or the R-01 booklet's textbook-derived sections." },
         "status": "ai-draft"
       }
     },
@@ -329,11 +336,11 @@
       "kind": "text",
       "id": "vision-1-l01-q06",
       "prompt": "Type the English word for the Persian meaning shown below.",
-      "promptFa": "برنامهٔ هفتگی — واژهٔ انگلیسیِ این معنی را بنویسید.",
-      "accepted": ["timetable"],
+      "promptFa": "یوزپلنگ — واژهٔ انگلیسیِ این معنی را بنویسید.",
+      "accepted": ["cheetah"],
       "caseSensitive": false,
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     },
@@ -343,42 +350,46 @@
       "prompt": "Match each English word with its Persian meaning.",
       "promptFa": "هر واژهٔ انگلیسی را به معنی فارسی‌اش وصل کن.",
       "pairs": [
-        { "left": "classmate", "right": "هم‌کلاسی" },
-        { "left": "recess", "right": "زنگ تفریح" },
-        { "left": "review", "right": "مرور کردن" },
-        { "left": "excellent", "right": "عالی" }
+        { "left": "forest", "right": "جنگل" },
+        { "left": "injured", "right": "مجروح، زخمی" },
+        { "left": "kill", "right": "کشتن" },
+        { "left": "lifespan", "right": "طول عمر" }
       ],
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "third-party", "registerId": "R-01", "locator": "Lesson 1 word list, pp. 44-45" },
         "status": "ai-draft"
       }
     },
     {
       "kind": "sorter",
       "id": "vision-1-l01-q08",
-      "prompt": "Sort the words into the two groups.",
-      "promptFa": "واژه‌ها را در دو گروه دسته‌بندی کن.",
+      "prompt": "Sort these actions into the two groups.",
+      "promptFa": "این کارها را در دو گروه دسته‌بندی کن.",
       "regions": [
-        { "id": "school-subjects", "label": "School subjects" },
-        { "id": "daily-actions", "label": "Daily actions" }
+        { "id": "protects-nature", "label": "Protects nature" },
+        { "id": "harms-nature", "label": "Harms nature" }
       ],
       "chips": [
-        { "text": "mathematics", "answerRegionId": "school-subjects" },
-        { "text": "geography", "answerRegionId": "school-subjects" },
-        { "text": "review new words", "answerRegionId": "daily-actions", "why": "A thing you do, not a school subject." },
-        { "text": "get up early", "answerRegionId": "daily-actions" }
+        { "text": "plant trees", "answerRegionId": "protects-nature" },
+        { "text": "protect wild animals", "answerRegionId": "protects-nature" },
+        { "text": "clean the lakes", "answerRegionId": "protects-nature" },
+        { "text": "cut down forests", "answerRegionId": "harms-nature", "why": "Cutting down forests destroys the homes of animals." },
+        { "text": "kill rare animals", "answerRegionId": "harms-nature" },
+        { "text": "create landfill sites", "answerRegionId": "harms-nature" }
       ],
       "provenance": {
-        "source": { "kind": "author-created", "note": "Original demo content authored for this app as an AI-assisted first draft (P3.2); not copied from the official Vision 1 Student Book or any registered source." },
+        "source": { "kind": "author-created", "note": "Original question authored for this app as an AI-assisted first draft (P3.2 amendment); not copied from the official Vision 1 Student Book, the workbook, or the R-01 booklet's textbook-derived sections." },
         "status": "ai-draft"
       }
     }
   ],
   "provenance": {
     "source": {
-      "kind": "author-created",
-      "note": "Original demo lesson authored for this app as an AI-assisted first draft (roadmap task P3.2). It uses the official Vision 1 curriculum context (grade 10, lesson 1) but no text, dialogue, exercise, or answer key is copied from the official Vision 1 Student Book or from any source in docs/content/RIGHTS_REGISTER.md."
+      "kind": "third-party",
+      "registerId": "R-01",
+      "locator": "Lesson 1, pp. 43-74"
     },
-    "status": "ai-draft"
+    "status": "ai-draft",
+    "edition": "ed. 3, Mehr 1401"
   }
 }

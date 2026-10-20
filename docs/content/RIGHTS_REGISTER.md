@@ -5,9 +5,9 @@
 | **Document** | Register of rights status for every uploaded source material (roadmap task P1.2; gate C2) |
 | **Project** | Interactive English Learning Web App (Iranian grades 7–12 + general learners) |
 | **Scope** | The 9 files currently in `upload/` (local only, git-ignored). No other sources are covered by this register. |
-| **Status** | **No source in this register is cleared for reuse beyond what its record states. No permission has been granted by anyone at the time of writing.** |
+| **Status** | **2026-10-20 update:** the project owner reports that the two جزوه authors (Jamal Ahmadi; Dr. Hassan Lotfi) granted the permissions requested in the P1.2 drafts. The grants are recorded below as **owner-reported — written evidence pending archival** (rule 7); reuse proceeds only within the recorded scope: selective adaptation of the authors' original contributions, with attribution, non-commercial. The MoE textbook content inside the booklets (UQ-1/UQ-2) remains out of scope. Sources R-07–R-09 (OUP) are unchanged: restricted, design-reference-only. |
 | **Companion docs** | Assessment §7 (`docs/architecture/PAPERMORPH_ASSESSMENT.md`), roadmap P1.2 + §5.1 C2, permission drafts in `docs/content/permissions/` |
-| **Last updated** | 2026-10-19 (initial register, P1.2) |
+| **Last updated** | 2026-10-20 (owner-reported grants for R-01–R-06 recorded per rule 7; P3.2 fixture re-based on R-01) |
 
 ---
 
@@ -21,6 +21,7 @@ This register records **verified evidence only**. It is governed by the followin
 4. **No copyrighted content is reproduced in this register** beyond short factual metadata (titles, author/edition lines, contact IDs, and one boilerplate rights clause quoted as evidence of a license statement). No textbook passages, exercises, scans, or page images appear here.
 5. Decision values (per record): **allowed** · **restricted** · **permission required** · **unresolved**.
 6. This register is the input to automated enforcement planned in roadmap task P2.4 (`verify` forbidden-file scan). Register entries do not by themselves make any use lawful — they document status and what must happen before a use is permitted.
+7. **Owner-reported grants** (first used 2026-10-20): when the project owner reports that a rights holder granted a request, the record may move to `allowed` with the explicit qualifier **"owner-reported — written evidence pending archival"**. The written reply must be archived under `docs/content/permissions/`; until then the grant's scope is taken conservatively as the scope requested by the corresponding draft, and if no written evidence is archived the record reverts to `permission required`. An owner report is the owner's statement of fact, not independently verified evidence — it is recorded as such, and it never extends to content the rights holder could not license (e.g. MoE textbook material inside the booklets, UQ-1/UQ-2).
 
 Evidence in this register was checked on **2026-10-19** (Tehran-local date), by local inspection of the files in `upload/` with `pdfinfo` (document metadata), `pdftotext` (front-matter/copyright-page text extraction), and page-image rendering for image-only scans. No content was transmitted or published.
 
@@ -55,12 +56,12 @@ Evidence in this register was checked on **2026-10-19** (Tehran-local date), by 
 - **Verified license / rights statement:** **No explicit license, copyright notice, or distribution grant was found** in the front matter. Evidence: cover statement «هزینه جزوه: رایگان» (free of charge) and an invitation to report errors to the author via WhatsApp/Telegram/«شاد» at `@JamalAhmadi1984` (front matter, verified 2026-10-19). An error-reporting invitation is a correction channel, **not** a grant of reuse rights. Free-of-charge distribution ≠ license (rule 1).
 - **Intended use in this project (current):** **curriculum map only** — lesson ordering, topic lists, and grammar-point coverage are treated as facts for planning; no verbatim text, exercise, or image reuse.
 - **Intended use (contingent):** if and only if written permission is granted: selective adaptation of his original explanations/tests into interactive web lessons, with attribution, non-commercial.
-- **Current permission status:** **not requested yet — draft prepared (P1.2), not sent.** No reply, no grant, no denial on record.
+- **Current permission status:** **owner-reported grant received (2026-10-20)** — the owner states the author answered the draft request (Draft A) granting permission; the written reply is not yet archived here. Reuse proceeds only within the owner-reported scope per rule 7: selective adaptation of the author's original contributions (word lists, Persian explanations, authored test items), with attribution, non-commercial, per the contingent-use plan above. Textbook-derived sections of the booklet stay excluded (UQ-1/UQ-2).
 - **Permitted uses based on evidence:** local possession and reading; use as a factual curriculum map; contact via the published channel. No other use is supported by evidence.
 - **Prohibited uses based on evidence:** committing to git; embedding text/exercises/images in app artifacts; redistribution or re-publication of the booklet or substantial parts; derivative works; any commercial use — all absent any grant.
 - **Required permission / clarification:** written permission from the author for digitization, interactive adaptation, hosting, and distribution; clarification of which portions are his original work vs. textbook-derived (UQ-1); attribution format; territorial scope; duration; restrictions (draft request: `docs/content/permissions/PERMISSION_REQUEST_jamal-ahmadi.md`).
 - **Evidence source & date checked:** cover page, front matter, and closing signature via `pdftotext` pages 1–4 of the local file; `pdfinfo` metadata — 2026-10-19. P0-phase rights finding in assessment §7.
-- **Current decision:** **permission required.**
+- **Current decision:** **allowed — owner-reported grant (2026-10-20), written evidence pending archival.**
 - **Assumptions (unverified):** that the author is contactable at the published IDs; that the author is the party who decides reuse of his original contributions.
 - **Unresolved questions:** UQ-1 (original vs. textbook-derived scope), UQ-2 (MoE textbook rights), UQ-4 (PDF metadata author field discrepancy).
 
@@ -73,12 +74,12 @@ Evidence in this register was checked on **2026-10-19** (Tehran-local date), by 
 - **Verified license / rights statement:** none found; same free-of-charge cover note and error-reporting invitation to `@JamalAhmadi1984` (front matter, verified 2026-10-19).
 - **Intended use in this project (current):** curriculum map only (same as R-01).
 - **Intended use (contingent):** selective interactive adaptation with attribution, non-commercial, only after permission.
-- **Current permission status:** **not requested yet — draft prepared, not sent.**
+- **Current permission status:** **owner-reported grant received (2026-10-20)** — the owner reports this record's author granted the corresponding draft request (same author/draft group as R-01); written reply not yet archived. Scope per rule 7: selective adaptation of original contributions, attribution, non-commercial.
 - **Permitted uses based on evidence:** same as R-01 (local reference, factual curriculum mapping).
 - **Prohibited uses based on evidence:** same as R-01.
 - **Required permission / clarification:** same as R-01 (covered by the same draft request).
 - **Evidence source & date checked:** cover page and front matter via `pdftotext` pages 1–4; `pdfinfo` — 2026-10-19. Assessment §7.
-- **Current decision:** **permission required.**
+- **Current decision:** **allowed — owner-reported grant (2026-10-20), written evidence pending archival.**
 - **Assumptions / unresolved:** as R-01 (UQ-1, UQ-2, UQ-4).
 
 ### R-03 — جزوه جامع پایه دوازدهم ("Vision Three", grade 12, with final-exam material)
@@ -90,11 +91,11 @@ Evidence in this register was checked on **2026-10-19** (Tehran-local date), by 
 - **Verified license / rights statement:** none found; same free-of-charge note and error-reporting invitation (verified 2026-10-19).
 - **Intended use in this project (current):** curriculum map only.
 - **Intended use (contingent):** selective interactive adaptation with attribution, non-commercial, only after permission.
-- **Current permission status:** **not requested yet — draft prepared, not sent.**
+- **Current permission status:** **owner-reported grant received (2026-10-20)** — the owner reports this record's author granted the corresponding draft request (same author/draft group as R-01); written reply not yet archived. Scope per rule 7: selective adaptation of original contributions, attribution, non-commercial.
 - **Permitted uses / prohibited uses:** as R-01.
 - **Required permission / clarification:** as R-01; plus explicit confirmation that final-exam-related sections are his own material or covered by his permission (see draft request, which asks this).
 - **Evidence source & date checked:** cover page and front matter via `pdftotext` pages 1–4; `pdfinfo` — 2026-10-19. Assessment §7.
-- **Current decision:** **permission required.**
+- **Current decision:** **allowed — owner-reported grant (2026-10-20), written evidence pending archival.**
 - **Assumptions / unresolved:** as R-01 (UQ-1, UQ-2).
 
 ### R-04 — جزوه کامل زبان انگلیسی پایه هفتم (grade 7)
@@ -106,12 +107,12 @@ Evidence in this register was checked on **2026-10-19** (Tehran-local date), by 
 - **Verified license / rights statement:** **no explicit license or copyright notice found** in the front matter. Evidence checked: cover pages and first pages of all three Lotfi files (2026-10-19) — no «رایگان»/"free" statement and no error-reporting invitation like the Ahmadi booklets; the covers instead publish a contact number «(09141842803 تلگرام و اینستاگرام و تماس)» (Telegram, Instagram, and phone). Publishing a contact channel is not a rights grant (rule 1).
 - **Intended use in this project (current):** curriculum map only (grade-7 Prospect coverage).
 - **Intended use (contingent):** selective interactive adaptation with attribution, non-commercial, only after permission.
-- **Current permission status:** **not requested yet — draft prepared, not sent.**
+- **Current permission status:** **owner-reported grant received (2026-10-20)** — the owner reports this record's author granted the corresponding draft request (same author/draft group as R-01); written reply not yet archived. Scope per rule 7: selective adaptation of original contributions, attribution, non-commercial.
 - **Permitted uses based on evidence:** local possession and reading; factual curriculum mapping.
 - **Prohibited uses based on evidence:** as R-01 (committing, embedding, redistribution, derivatives, commercial use).
 - **Required permission / clarification:** written permission and scope clarifications per draft request `docs/content/permissions/PERMISSION_REQUEST_hassan-lotfi.md`; which portions are original vs. textbook-derived (UQ-1).
 - **Evidence source & date checked:** cover pages via `pdftotext` page 1 of the local file; `pdfinfo` — 2026-10-19. Assessment §7.
-- **Current decision:** **permission required.**
+- **Current decision:** **allowed — owner-reported grant (2026-10-20), written evidence pending archival.**
 - **Assumptions (unverified):** that the published number/Telegram/Instagram route reaches Dr. Lotfi himself; that he decides reuse of his original contributions.
 - **Unresolved questions:** UQ-1, UQ-2.
 
@@ -124,11 +125,11 @@ Evidence in this register was checked on **2026-10-19** (Tehran-local date), by 
 - **Verified license / rights statement:** none found (front matter checked 2026-10-19; published contact line only).
 - **Intended use in this project (current):** curriculum map only.
 - **Intended use (contingent):** as R-04.
-- **Current permission status:** **not requested yet — draft prepared, not sent.**
+- **Current permission status:** **owner-reported grant received (2026-10-20)** — the owner reports this record's author granted the corresponding draft request (same author/draft group as R-01); written reply not yet archived. Scope per rule 7: selective adaptation of original contributions, attribution, non-commercial.
 - **Permitted / prohibited uses:** as R-04.
 - **Required permission / clarification:** as R-04 (same draft request).
 - **Evidence source & date checked:** cover page via `pdftotext`; `pdfinfo` — 2026-10-19. Assessment §7.
-- **Current decision:** **permission required.**
+- **Current decision:** **allowed — owner-reported grant (2026-10-20), written evidence pending archival.**
 - **Assumptions / unresolved:** as R-04 (UQ-1, UQ-2).
 
 ### R-06 — جزوه کامل زبان انگلیسی پایه نهم (grade 9)
@@ -140,11 +141,11 @@ Evidence in this register was checked on **2026-10-19** (Tehran-local date), by 
 - **Verified license / rights statement:** none found (front matter checked 2026-10-19; published contact line only).
 - **Intended use in this project (current):** curriculum map only.
 - **Intended use (contingent):** as R-04.
-- **Current permission status:** **not requested yet — draft prepared, not sent.**
+- **Current permission status:** **owner-reported grant received (2026-10-20)** — the owner reports this record's author granted the corresponding draft request (same author/draft group as R-01); written reply not yet archived. Scope per rule 7: selective adaptation of original contributions, attribution, non-commercial.
 - **Permitted / prohibited uses:** as R-04.
 - **Required permission / clarification:** as R-04 (same draft request).
 - **Evidence source & date checked:** cover page via `pdftotext`; `pdfinfo` — 2026-10-19. Assessment §7.
-- **Current decision:** **permission required.**
+- **Current decision:** **allowed — owner-reported grant (2026-10-20), written evidence pending archival.**
 - **Assumptions / unresolved:** as R-04 (UQ-1, UQ-2).
 
 ### R-07 — Introductory Stories for Reproduction (OUP series)
@@ -248,3 +249,4 @@ No email address exists on file for either author; none has been invented. The d
 | Date | Change |
 |---|---|
 | 2026-10-19 | Initial register created (P1.2): all 9 uploaded sources recorded individually with evidence-checked fields; the R-07/R-08 scan-composition findings (imprint absence) and R-04–R-06 front-matter findings verified during this task; permission drafts for the two جزوه author groups prepared under `docs/content/permissions/` and linked from R-01–R-06. |
+| 2026-10-20 | **Owner-reported grants recorded for R-01–R-06** (P3.2 amendment directive «رضایت‌ها گرفته شده از جزوه‌ها استفاده کن»): the owner states both جزوه authors granted the requested permissions; rule 7 added (owner-reported-grant evidence class with mandatory written-evidence-pending flag and automatic reversion); header status updated; decisions → **allowed — owner-reported grant, written evidence pending**. Under that basis the P3.2 fixture was re-derived from R-01 (Vision One L1: word list pp. 44–45, future-simple explanation p. 56, noun-types writing section p. 61, descriptive vocabulary test p. 49) with `third-party` R-01 provenance + lesson-level edition; the booklet's textbook-derived sections (conversation/reading translations, per its own front matter) remain excluded per UQ-1/UQ-2. |

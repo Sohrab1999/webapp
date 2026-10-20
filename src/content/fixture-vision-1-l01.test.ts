@@ -1,5 +1,6 @@
 /**
- * Fixture validation for the Vision One L1 demo lesson (roadmap task P3.2).
+ * Fixture validation for the Vision One L1 demo lesson (roadmap task P3.2,
+ * amended 2026-10-20 by owner directive: "use the obtained jozve consents").
  *
  * The fixture (`content/lessons/vision-1-l01.json`) is the first content
  * file validated against the P3.1 Content Schema v1. These tests cover the
@@ -20,11 +21,22 @@
  * changes are forbidden). Real DOM/browser rendering is owned by the P4/P5
  * shell/player tasks.
  *
- * The fixture itself is original synthetic content (`author-created`,
- * `ai-draft`); these tests also assert it never claims `official-textbook`
- * or `third-party` origin, never invents a reviewer/register id/audio
- * asset, and never smuggles in rights or permission fields. No copyrighted
- * textbook material is reproduced by or in these tests.
+ * Provenance after the owner-directed amendment: the rights register now
+ * records R-01 ("Vision One" grade-10 booklet, Jamal Ahmadi, ed. 3 Mehr
+ * 1401) as ALLOWED on an owner-reported grant (written evidence pending
+ * archival; register rule 6). The fixture's vocabulary (terms + Persian
+ * meanings), both grammar points, and 4 assessment items are adapted from
+ * the booklet's AUTHOR-ORIGINAL Lesson 1 material and cite it via
+ * `third-party` provenance `registerId: "R-01"` with page locators. The
+ * booklet's textbook-derived sections (its conversation/reading
+ * translations) remain excluded per register UQ-1/UQ-2, so the dialogue,
+ * the reading, and 3 assessment items stay `author-created` synthetic.
+ * All 25 entities remain `ai-draft` (no reviewer). These tests assert the
+ * exact R-01/author-created split, that no `official-textbook` claim or
+ * invented reviewer/audio/rights field exists, and that the registerId is
+ * cited only as R-01 (record-existence cross-checking is P3.3 validator
+ * work). No copyrighted textbook material is reproduced by or in these
+ * tests.
  */
 
 import { readFileSync } from "node:fs";
@@ -258,7 +270,7 @@ describe("Vision 1 L1 demo fixture — schema validation (P3.2 AC: fixtures vali
     expect(lesson.reading?.questions).toHaveLength(2);
   });
 
-  it("carries provenance on every entity — all author-created, all ai-draft, none reviewed", () => {
+  it("carries provenance on every entity — ai-draft everywhere, no reviewer, with the amended R-01/author-created split", () => {
     const lesson = expectValidFixture();
     const blocks = [
       lesson.provenance,
@@ -274,31 +286,86 @@ describe("Vision 1 L1 demo fixture — schema validation (P3.2 AC: fixtures vali
     for (const block of blocks) {
       expect(block.status).toBe("ai-draft");
       expect(block.reviewer).toBeUndefined();
-      expect(block.source.kind).toBe("author-created");
-      if (block.source.kind === "author-created") {
-        // Every note explicitly disclaims copying from the official book
-        // (the lesson-level note phrases it as "no … is copied from", the
-        // item-level notes as "not copied from").
-        expect(block.source.note).toMatch(/copied from the official Vision 1 Student Book/);
-      }
+    }
+
+    // Lesson container: derived from the R-01 booklet's Lesson 1 materials.
+    expect(lesson.provenance.source.kind).toBe("third-party");
+    if (lesson.provenance.source.kind !== "third-party") throw new Error("unreachable");
+    expect(lesson.provenance.source.registerId).toBe("R-01");
+    expect(lesson.provenance.source.locator).toMatch(/^Lesson 1/);
+    expect(lesson.provenance.edition).toBe("ed. 3, Mehr 1401");
+
+    // Vocab (term + Persian meaning) and grammar points: R-01-derived.
+    const derived = [
+      ...lesson.vocab.map((item) => item.provenance),
+      ...lesson.grammar.map((point) => point.provenance),
+    ];
+    expect(derived).toHaveLength(12);
+    for (const block of derived) {
+      expect(block.source.kind).toBe("third-party");
+      if (block.source.kind !== "third-party") throw new Error("unreachable");
+      expect(block.source.registerId).toBe("R-01");
+      expect(block.source.locator).toMatch(/^Lesson 1/);
+      expect(block.edition).toBeUndefined(); // edition cited once, at lesson level
+    }
+
+    // Dialogue, reading, and the 3 authored assessment items stay synthetic.
+    expect(lesson.dialogue?.provenance.source.kind).toBe("author-created");
+    expect(lesson.reading?.provenance.source.kind).toBe("author-created");
+    const authoredNotes = [
+      lesson.dialogue?.provenance,
+      lesson.reading?.provenance,
+      ...quizItems(lesson)
+        .filter((item) => item.provenance.source.kind === "author-created")
+        .map((item) => item.provenance),
+    ];
+    for (const block of authoredNotes) {
+      if (!block) continue;
+      if (block.source.kind !== "author-created") throw new Error("unreachable");
+      expect(block.source.note).toMatch(/copied from the official Vision 1 Student Book/);
     }
   });
 
-  it("never claims official-textbook or third-party origin, never invents reviewer/edition/register-id/audio or rights fields", () => {
-    // The fixture is synthetic: it must not cite the official book (UQ-2:
-    // textbook reuse is unresolved) or a register record (R-01 is
-    // permission-required, not granted). Reviewer/edition are forbidden on
-    // drafts; no media files exist, so no audio refs may be invented; and
-    // strict objects leave no room for invented rights fields.
+  it("cites the register only as R-01 and never claims official-textbook origin, reviewer, audio, or rights fields", () => {
+    // The register (not this file) is the source of truth for rights. The
+    // fixture may reference R-01 by id (owner-reported grant, register rule
+    // 6) but must not claim official-textbook origin (UQ-2 unresolved),
+    // must not invent a reviewer, audio ref (no media files exist), or
+    // rights/permission/license fields (strict objects already reject
+    // them). Record-existence/scope cross-checking is P3.3 validator work.
     expect(rawFixtureText).not.toContain('"official-textbook"');
-    expect(rawFixtureText).not.toContain('"third-party"');
-    expect(rawFixtureText).not.toContain('"registerId"');
     expect(rawFixtureText).not.toContain('"reviewer"');
-    expect(rawFixtureText).not.toContain('"edition"');
     expect(rawFixtureText).not.toContain('"audio"');
     expect(rawFixtureText).not.toContain('"rights"');
     expect(rawFixtureText).not.toContain('"permission"');
     expect(rawFixtureText).not.toContain('"license"');
+    const registerIds = [...rawFixtureText.matchAll(/"registerId"\s*:\s*"(R-\d{2})"/g)].map(
+      (match) => match[1],
+    );
+    expect(registerIds.length).toBeGreaterThan(0);
+    expect(new Set(registerIds)).toEqual(new Set(["R-01"]));
+  });
+
+  it("adapts the real Vision 1 L1 topics the R-01 booklet records for this lesson", () => {
+    // The amendment aligns the fixture with the actual lesson 1 of the
+    // Vision One line (Saving Nature; simple future; noun types) — as
+    // covered by the booklet's own L1 sections, not by the official book.
+    const lesson = expectValidFixture();
+    expect(lesson.title).toBe("Saving Nature");
+    expect(lesson.titleFa).toContain("طبیعت");
+    const grammarTitles = lesson.grammar.map((point) => point.title);
+    expect(grammarTitles).toContain("Simple Future Tense (will)");
+    expect(grammarTitles).toContain("Common and Proper Nouns");
+    for (const point of lesson.grammar) {
+      expect(point.explanationFa).toBeTruthy();
+    }
+    // Grammar markers adapted from the booklet's explanation must include
+    // its future-tense markers (will/won't) and noun-type terminology.
+    const futurePoint = lesson.grammar.find((point) => point.id === "vision-1-l01-grammar-01");
+    expect(futurePoint?.explanation).toMatch(/will/);
+    expect(futurePoint?.explanation).toMatch(/won't/);
+    const nounPoint = lesson.grammar.find((point) => point.id === "vision-1-l01-grammar-02");
+    expect(nounPoint?.explanation).toMatch(/proper noun/i);
   });
 
   it("uses lesson-wide unique ids namespaced under the lesson id", () => {
@@ -411,7 +478,7 @@ describe("Vision 1 L1 demo fixture — invalid mutations are rejected, not silen
   it("rejects a blanks item whose marker count does not match its answers (cross-field rule)", () => {
     expectRejected((fixture) => {
       const assessment = fixture.assessment as Array<Record<string, unknown>>;
-      assessment[3]["answers"] = ["get up"];
+      assessment[3]["answers"] = ["take", "protect"];
     });
   });
 
