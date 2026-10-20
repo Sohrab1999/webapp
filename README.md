@@ -33,7 +33,9 @@ dependencies or regenerate the lockfile as part of feature tasks.
 | `npm run typecheck` | `tsc --noEmit` with strict mode enabled |
 | `npm run test` | Vitest test runner (unit tests for the P2.4 scanners live in `scripts/*.test.mjs`) |
 | `npm run e2e` | Playwright test runner (browser binaries are not downloaded yet — deferred per roadmap) |
-| `npm run verify` | Canonical verification workflow (`scripts/verify.mjs`): typecheck → lint → tests → build → secret scan → forbidden-file scan; nonzero exit if any required check fails |
+| `npm run content:check` | Build-time content validator (P3.3): schema + rights-register cross-check of everything under `content/` |
+| `npm run artifact:check` | Lesson artifact contract checker (P3.4): bundle layout + `lesson.json` sidecar + engine byte-identity under `public/lessons/` |
+| `npm run verify` | Canonical verification workflow (`scripts/verify.mjs`): typecheck → lint → tests → content:check → artifact:check → build → secret scan → forbidden-file scan; nonzero exit if any required check fails |
 | `scripts/sync-papermorph.sh` | Sync the vendored Papermorph engine to the pinned upstream commit (`--dry-run` / `--check` modes; see `docs/architecture/PAPERMORPH_VENDORING.md`) |
 
 ## Project layout
@@ -45,8 +47,12 @@ dependencies or regenerate the lockfile as part of feature tasks.
 - `src/app/globals.css` — Tailwind CSS 4 entry + base layer (lang-driven font selection, heading defaults, focus ring, reduced motion)
 - `src/app/tokens/page.tsx` — storybook-style demo of the token system (development artifact, not a product page)
 - `src/content/schema/` — Zod content schema v1 (roadmap P3.1): runtime validators + inferred types for `Grade`, `Course`, `Lesson`, `VocabItem`, `GrammarPoint`, `Dialogue`, `Reading`, `QuizItem`; every entity carries a mandatory `provenance` block (`source` / `status` / `reviewer` / `edition`); rights decisions are never stored in content — third-party material references the rights register by record id
+- `src/content/validator/` — P3.3 build-time content validator (register parser, core logic, CLI) reused by the artifact checker
+- `src/content/artifact/` — P3.4 lesson artifact contract: `lesson.json` sidecar schema, pure checker logic, CLI; see `docs/architecture/LESSON_ARTIFACT_CONTRACT.md`
+- `content/` — schema-validated content sources (lessons/courses/grades), walked by `npm run content:check`
+- `public/lessons/` — lesson artifact bundles (the authoring pipeline's output, one folder per lesson); validated by `npm run artifact:check`; the committed `vision-1-l01/` bundle is the P3.4 hand-made demo
 - `public/fonts/` — self-hosted font files with their verbatim license texts
-- `scripts/` — project-owned tooling: `verify.mjs` (the `npm run verify` orchestrator), `scan-secrets.mjs` + `scan-forbidden-files.mjs` (repository safety scanners, unit-tested in `scripts/*.test.mjs`), `sync-papermorph.sh` (vendored-engine sync), `lib/verify-common.mjs` (shared scanner helpers)
+- `scripts/` — project-owned tooling: `verify.mjs` (the `npm run verify` orchestrator), `content-check.mjs` + `artifact-check.mjs` (validator runners), `scan-secrets.mjs` + `scan-forbidden-files.mjs` (repository safety scanners, unit-tested in `scripts/*.test.mjs`), `sync-papermorph.sh` (vendored-engine sync), `lib/verify-common.mjs` (shared scanner helpers)
 - `vendor/` — vendored Papermorph engine (`vendor/engine/` + `vendor/engine.py`, byte-identical to the pinned upstream commit; do not hand-edit — sync via the script above)
 - `THIRD_PARTY_NOTICES.md` — license/attribution record for vendored third-party software
 - `next.config.ts` — wires `@tailwindcss/turbopack` via `turbopack.rules` (no PostCSS config on this path)

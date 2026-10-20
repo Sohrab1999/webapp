@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Canonical verification workflow — roadmap task P2.4 (`npm run verify`).
 //
-// Runs, in this documented order (roadmap §5.4 + P3.3):
+// Runs, in this documented order (roadmap §5.4 + P3.3 + P3.4):
 //   1. TypeScript type-checking        — `npm run typecheck` (tsc --noEmit)
 //   2. ESLint                          — `npm run lint`
 //   3. Automated tests                 — `npm run test` (Vitest) when test
@@ -13,9 +13,13 @@
 //   4. Content validation              — `npm run content:check` (P3.3:
 //                                        schema + rights-register cross-check
 //                                        of everything under content/)
-//   5. Production build                — `npm run build`
-//   6. Repository secret scan          — `node scripts/scan-secrets.mjs`
-//   7. Forbidden-file/hygiene scan     — `node scripts/scan-forbidden-files.mjs`
+//   5. Artifact contract check         — `npm run artifact:check` (P3.4:
+//                                        lesson bundle layout + sidecar +
+//                                        engine byte-identity under
+//                                        public/lessons/)
+//   6. Production build                — `npm run build`
+//   7. Repository secret scan          — `node scripts/scan-secrets.mjs`
+//   8. Forbidden-file/hygiene scan     — `node scripts/scan-forbidden-files.mjs`
 //
 // Behavior:
 // - Independent checks all run even after an earlier failure, so one run
@@ -157,6 +161,15 @@ export function main() {
     }),
   );
 
+  // 5: artifact contract (P3.4) — bundle layout + sidecar + engine byte-identity.
+  step("artifact-check", "Lesson artifact contract check (npm run artifact:check)", () =>
+    runStep({
+      cmd: "npm",
+      args: ["run", "artifact:check"],
+      requiredScript: "artifact:check",
+    }),
+  );
+
   step("build", "Production build (npm run build)", () =>
     runStep({
       cmd: "npm",
@@ -165,7 +178,7 @@ export function main() {
     }),
   );
 
-  // 6–7: repository safety scans (project-owned, no extra dependencies).
+  // 6–8: repository safety scans (project-owned, no extra dependencies).
   step("secret-scan", "Repository secret scan", () =>
     runStep({
       cmd: process.execPath,

@@ -1,0 +1,16 @@
+{
+  "contractVersion": 1,
+  "lessonId": "vision-1-l01",
+  "courseId": "vision-1",
+  "contentSchemaVersion": 1,
+  "provenance": {
+    "source": {
+      "kind": "author-created",
+      "note": "Artifact contract demo bundle (roadmap P3.4): minimal hand-made index.html/ch01 pages assembled around byte-identical copies of the vendored MIT Papermorph engine for the P3.2 demo lesson vision-1-l01; no third-party material beyond the MIT-licensed engine is embedded, and no rights decision is asserted here."
+    },
+    "status": "ai-draft"
+  },
+  "engine": {
+    "progressKey": "animebook:progress:/lessons/vision-1-l01/"
+  }
+}

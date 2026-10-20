@@ -5,3 +5,9 @@
 vendor/engine/** -text
 vendor/engine.py -text
 vendor/LICENSE -text
+# P3.4 lesson artifact bundles: the lib/ engine copies are checked for
+# byte-identity against vendor/engine/ by npm run artifact:check, so they
+# stay byte-exact on every OS / git configuration for the same reason as
+# vendor/ above. Audio clips are binary.
+public/lessons/**/lib/** -text
+public/lessons/**/*.mp3 -text

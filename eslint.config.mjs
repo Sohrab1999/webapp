@@ -20,6 +20,12 @@ const eslintConfig = defineConfig([
     // docs/architecture/PAPERMORPH_VENDORING.md) — upstream code is never
     // re-styled to fit app lint conventions; the app boundary is src/.
     "vendor/**",
+    // Lesson artifact bundles (roadmap P3.4): byte-identical copies of the
+    // vendored engine (public/lessons/**/lib/) and pipeline-emitted data
+    // (timings.js, lesson.json, chapter pages, audio). Checked by
+    // `npm run artifact:check`, not by the app linter — same rationale as
+    // vendor/ above.
+    "public/lessons/**",
   ]),
 ]);
 

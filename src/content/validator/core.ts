@@ -15,6 +15,11 @@
  *    an owner-reported grant with written evidence still pending is
  *    reported as a WARNING that is explicitly NOT finally cleared — it is
  *    never presented as verified permission.
+ *
+ * `checkRegisterRefs`, `schemaIssues` and the `ProvenanceRef` shape are
+ * exported and REUSED by the P3.4 lesson artifact contract checker
+ * (`src/content/artifact/`) so register-decision semantics have exactly
+ * one implementation across all build-time validators.
  */
 
 import {
@@ -49,7 +54,7 @@ export interface ValidationReport {
 }
 
 /** A `third-party` provenance reference found in parsed content. */
-interface ProvenanceRef {
+export interface ProvenanceRef {
   registerId: string;
   /** Location of the provenance block inside the file, e.g. "vocab[2].provenance". */
   at: string;
@@ -142,8 +147,11 @@ function validateContentFile(file: ContentFile, register: ParsedRegister): Conte
   return ref ? checkRegisterRefs(file.path, [ref], register) : [];
 }
 
-/** Format Zod issues as one actionable error each (path + message). */
-function schemaIssues(
+/**
+ * Format Zod issues as one actionable error each (path + message).
+ * Shared with the P3.4 artifact contract checker.
+ */
+export function schemaIssues(
   path: string,
   zodIssues: readonly { path: readonly PropertyKey[]; message: string }[],
 ): ContentIssue[] {
@@ -206,7 +214,7 @@ function collectLessonRefs(lesson: Lesson): ProvenanceRef[] {
  * - "allowed" + owner-reported → WARNING, explicitly not finally cleared;
  * - "allowed" without owner-report qualifier → info.
  */
-function checkRegisterRefs(
+export function checkRegisterRefs(
   path: string,
   refs: readonly ProvenanceRef[],
   register: ParsedRegister,
