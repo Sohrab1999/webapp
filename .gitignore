@@ -20,3 +20,7 @@ next-env.d.ts
 
 # Papermorph generated book artifacts — never committed (covers books/src/ per roadmap P2.1)
 books/
+
+# Playwright output (P4.1): failure artifacts and reports — never committed
+test-results/
+playwright-report/

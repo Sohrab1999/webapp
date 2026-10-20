@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+
+import { LanguageTogglePlaceholder } from "@/app/language-toggle";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,8 +14,16 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
+  // suppressHydrationWarning: the P4.1 language-toggle placeholder mutates
+  // lang/dir on <html> after hydration (documented in language-toggle.tsx);
+  // the attribute change is intentional client-side state, not a mismatch.
   return (
-    <html lang="fa" dir="rtl" className="h-full">
+    <html
+      lang="fa"
+      dir="rtl"
+      className="h-full"
+      suppressHydrationWarning
+    >
       {/* Primary Persian font — preloaded to shrink the fallback→swap window.
           Inter is not preloaded: it is needed only on pages with English
           containers and loads on demand (see src/app/fonts.css). */}
@@ -32,7 +43,10 @@ export default function RootLayout({
         </a>
         <header className="border-b border-border">
           <div className="mx-auto flex w-full max-w-content items-center justify-between gap-4 px-gutter py-3 sm:px-gutter-wide">
-            <p className="text-base font-semibold sm:text-lg">
+            <p
+              data-testid="header-brand"
+              className="text-base font-semibold sm:text-lg"
+            >
               انگلیسی تعاملی{" "}
               <span
                 dir="ltr"
@@ -42,9 +56,12 @@ export default function RootLayout({
                 Interactive English
               </span>
             </p>
-            <p className="text-xs text-foreground-muted sm:text-sm">
-              پایه‌های ۷ تا ۱۲
-            </p>
+            <div className="flex items-center gap-3">
+              <LanguageTogglePlaceholder />
+              <p className="text-xs text-foreground-muted sm:text-sm">
+                پایه‌های ۷ تا ۱۲
+              </p>
+            </div>
           </div>
         </header>
         <main

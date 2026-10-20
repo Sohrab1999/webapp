@@ -32,7 +32,7 @@ dependencies or regenerate the lockfile as part of feature tasks.
 | `npm run lint` | ESLint flat config (`eslint-config-next/core-web-vitals` + `/typescript`) |
 | `npm run typecheck` | `tsc --noEmit` with strict mode enabled |
 | `npm run test` | Vitest test runner (unit tests for the P2.4 scanners live in `scripts/*.test.mjs`) |
-| `npm run e2e` | Playwright test runner (browser binaries are not downloaded yet — deferred per roadmap) |
+| `npm run e2e` | Playwright browser tests (P4.1 shell routes; Chromium + Firefox projects; spec files `e2e/*.e2e.ts`; after a fresh clone run `npx playwright install chromium firefox` once — `test-results/`/`playwright-report/` are git-ignored output) |
 | `npm run content:check` | Build-time content validator (P3.3): schema + rights-register cross-check of everything under `content/` |
 | `npm run artifact:check` | Lesson artifact contract checker (P3.4): bundle layout + `lesson.json` sidecar + engine byte-identity under `public/lessons/` |
 | `npm run verify` | Canonical verification workflow (`scripts/verify.mjs`): typecheck → lint → tests → content:check → artifact:check → build → secret scan → forbidden-file scan; nonzero exit if any required check fails |
